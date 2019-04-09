@@ -29,7 +29,7 @@ class MembersManager {
             echo '<pre>';
             var_dump($th);
             echo '</pre>';
-            exit;;
+            exit;
         }
     }
 

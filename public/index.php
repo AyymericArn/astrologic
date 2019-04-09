@@ -15,9 +15,12 @@ $uri = substr($_SERVER['REQUEST_URI'], 17);
 
 $router = new App\Router($_GET['url']);
 
+// is user login ?
 if (!isset($_SESSION['connected'])) {
     $_SESSION['connected'] = false;
 }
+
+// routing
 
 $router->get('/', function () {
     if ($_SESSION['connected']) {
