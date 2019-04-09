@@ -97,12 +97,13 @@ if (empty($_SESSION['errors'])) {
     $membersManager = new MembersManager($db);
     $membersManager->registerMember($validator->getData());
     $_SESSION['success'] = 'Connected!';
+    $_SESSION['connected'] = true;
 
     echo 'ok';
-    // header('Location: ../');
+    header('Location: ../');
 
 } else {
 
-    // header('Location: ../register');
+    header('Location: ../register');
 
 };
