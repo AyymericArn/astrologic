@@ -50,6 +50,6 @@ class KwExtractor extends Horoscop {
 
 // CACHE NEEDED
 
-$extractor = new KwExtractor();
-$extractor->interpret();
+// $extractor = new KwExtractor();
+// $extractor->interpret();
 // $extractor->extract();

@@ -12,9 +12,9 @@ class Meal extends Horoscop {
     }
 
     public function defineHealthRange() {
-        $healtScore = parent::getQuantifiedHoroscop()->health;
+        $healthScore = parent::getQuantifiedHoroscop()->health;
 
-        $base = $healtScore * 20;
+        $base = $healthScore * 20;
         $mod = $base % 100;
         $min = $base - $mod;
         $max = $min + 100;
@@ -60,15 +60,15 @@ class Meal extends Horoscop {
             file_put_contents($cachePath, $response);
             
             $result = json_decode($response);
-            // sall be randomized
+            // shall be randomized
             return $result->hits[0];
         }
     }
 }
 
-$meal = new Meal();
+// $meal = new Meal();
 
-echo '<pre>';
-var_dump($meal->getMealsByRange());
-echo '</pre>';
-exit;
+// echo '<pre>';
+// var_dump($meal->getMealsByRange());
+// echo '</pre>';
+// exit;

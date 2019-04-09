@@ -72,6 +72,6 @@ class Movie extends KwExtractor {
     }
 }
 
-$movie = new Movie();
+// $movie = new Movie();
 
-$movie->getMovie();
+// $movie->getMovie();
