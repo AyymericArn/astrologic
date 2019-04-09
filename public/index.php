@@ -11,11 +11,15 @@ $uri = substr($_SERVER['REQUEST_URI'], 17);
 
 $router = new App\Router($_GET['url']);
 
+if (!isset($_SESSION['connected'])) {
+    $_SESSION['connected'] = false;
+}
+
 $router->get('/', function () {
     if ($_SESSION['connected']) {
         require('../views/pages/home.php');        
     } else {
-        require('../views/pages/new.php');        
+        header('Location: ./register');        
     }
 });
 
@@ -35,22 +39,22 @@ $router->get('/calendar', function () {
     if ($_SESSION['connected']) {
         require('../views/pages/calendar.php');        
     } else {
-        require('../views/pages/new.php');        
+        header('Location: ./register');        
     }
 });
 $router->get('/favorite', function () {
     if ($_SESSION['connected']) {
         require('../views/pages/favorite.php');        
     } else {
-        require('../views/pages/new.php');        
+        header('Location: ./register');        
     }
 });
 
-$router->post('/controller/register.php', function ($id) {
-    
+$router->post('/controller/register', function () {
+    echo 'posted';
 });
-$router->post('/controller/connect.php', function ($id) {
-    
+$router->post('/controller/connect', function () {
+    echo 'posted';
 });
 
 $router->run();

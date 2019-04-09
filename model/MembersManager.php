@@ -10,17 +10,26 @@ class MembersManager {
 
     public function registerMember(array $nuMember) {
 
+        echo '<pre>';
+        print_r($nuMember);
+        echo '</pre>';
+
         try {
-            $req = $this->db->prepare('INSERT INTO members (pseudo, email, password, inscription_date) VALUES (:pseudo, :email, :password, CURRENT_DATE)');
+            $req = $this->db->prepare('INSERT INTO members (username, email, password, zodiac, inscription_date, newsletter_sub) VALUES (:username, :email, :password, :zodiac, CURRENT_DATE, :newsletter_sub)');
     
             $req->execute([
-                'pseudo' => $nuMember[0],
+                'username' => $nuMember[0],
                 'email' => $nuMember[1],
-                'password' => $nuMember[2]
+                'password' => $nuMember[2],
+                'zodiac' => $nuMember[3],
+                'newsletter_sub' => $nuMember[4]
             ]);
             return true;
         } catch (\Throwable $th) {
-            return $th;
+            echo '<pre>';
+            var_dump($th);
+            echo '</pre>';
+            exit;;
         }
     }
 
