@@ -2,6 +2,11 @@ $primary-white: #f5f5f5;
 $primary-red: rgb(211, 76, 76);
 $title-font: 'Capriola', sans-serif;
 $content-font: 'Montserrat', sans-serif;
+$darkblue: rgba(68, 76, 118, 0.92);
+$purple: #889AFE;
+$pink: #F080A6;
+$yellow: #FECF58;
+$bluegreen: #67D5DC;
 
 
 //@import 'home';
@@ -11,7 +16,7 @@ $content-font: 'Montserrat', sans-serif;
     margin-left: auto;
     margin-right: auto;
     font-family: $title-font;
-    color: rgba(68, 76, 118, 0.92);
+    color: $darkblue;
     font-size: 15px;
     
     label{
@@ -22,7 +27,7 @@ $content-font: 'Montserrat', sans-serif;
     input{
         border: none;
         width: 300px;
-        border-bottom: 2px solid #F2F2F2;
+        border-bottom: 2px solid $primary-white;
         margin-top: 35px;
         font-size: 15px;
         outline: none;
@@ -53,7 +58,7 @@ $content-font: 'Montserrat', sans-serif;
     height: 46px;
     text-transform: uppercase;
     color: white;
-    background: #889AFE;
+    background: $purple;
     border-radius: 5px;
     font-size: 12px;
     margin-top: 10px;
@@ -67,7 +72,7 @@ $content-font: 'Montserrat', sans-serif;
     height: 46px;
     text-transform: uppercase;
     color: white;
-    background: #889AFE;
+    background: $purple;
     border-radius: 5px;
     font-size: 12px;
     
@@ -79,7 +84,7 @@ $content-font: 'Montserrat', sans-serif;
     height: 46px;
     text-transform: uppercase;
     color: white;
-    background: #F080A6;
+    background: $pink;
     border-radius: 5px;
     font-size: 12px;
     margin-top: 10px;
@@ -181,3 +186,67 @@ header {
     cursor: pointer;
 }
 
+//account
+
+.profile_image {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:40px;
+    .avatar{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+    }
+    .close_profile {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+        opacity: 0.3;
+    }
+}
+.profile_name {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    border-bottom: 2px solid $primary-white;
+    p {
+        margin: 15px 0 15px 0;
+        
+    }
+    button {
+        background: none;
+        border: none;
+        outline: none;
+        color: $pink;
+        margin: 0;
+    }
+}
+.account {
+
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $darkblue;
+    border-bottom: 2px solid $primary-white;
+    p {
+        width: 150px;
+        margin: 30px 0 10px 0;
+        font-family: $content-font;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    img {
+        margin: 30px 0 0 0;
+        width: 20px;
+        height: 20px;
+    }
+}

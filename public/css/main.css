@@ -11,7 +11,7 @@
   * input {
     border: none;
     width: 300px;
-    border-bottom: 2px solid #F2F2F2;
+    border-bottom: 2px solid #f5f5f5;
     margin-top: 35px;
     font-size: 15px;
     outline: none; }
@@ -131,5 +131,59 @@ header {
   right: 5px;
   padding: 5px;
   cursor: pointer; }
+
+.profile_image {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px; }
+  .profile_image .avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0; }
+  .profile_image .close_profile {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    opacity: 0.3; }
+
+.profile_name {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  border-bottom: 2px solid #f5f5f5; }
+  .profile_name p {
+    margin: 15px 0 15px 0; }
+  .profile_name button {
+    background: none;
+    border: none;
+    outline: none;
+    color: #F080A6;
+    margin: 0; }
+
+.account {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(68, 76, 118, 0.92);
+  border-bottom: 2px solid #f5f5f5; }
+  .account p {
+    width: 150px;
+    margin: 30px 0 10px 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 14px; }
+  .account img {
+    margin: 30px 0 0 0;
+    width: 20px;
+    height: 20px; }
 
 /*# sourceMappingURL=main.css.map */

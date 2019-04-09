@@ -60,6 +60,15 @@ $router->get('/favorite', function () {
     }
 });
 
+$router->get('/account', function () {
+    if ($_SESSION['connected']) {
+        require('../views/pages/account.php');        
+    } else {
+        header('Location: ./register');  
+        exit;      
+    }
+});
+
 $router->post('/controller/register', function () {
     echo 'posted';
 });
