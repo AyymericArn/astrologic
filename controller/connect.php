@@ -11,7 +11,7 @@ $membersManager = new MembersManager($db);
 
 if ($membersManager->findMember($_POST)) {
 
-    $_SESSION['success'] = 'Connected!';
+    $_SESSION['success'][] = 'Connected!';
     $_SESSION['connected'] = true;
 
     $_SESSION['userinfos'] = $membersManager->findMember($_POST);
@@ -22,18 +22,12 @@ if ($membersManager->findMember($_POST)) {
 
 } else {
     
-    $_SESSION['errors'][] = 'User not found';
+    $_SESSION['errors'][] = 'There is no user matching with your password';
+
     header('Location: ../connect');
 
 };
 
-// Check if user haved filled inputs
 
-    # code...
-    // Check if username and password exists
-    
-        // They do : grant access
-        
-        // They don't : do not grant access
 
 
