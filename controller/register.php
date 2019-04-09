@@ -101,9 +101,10 @@ if (empty($_SESSION['errors'])) {
 
     echo 'ok';
     header('Location: ../');
-
+    exit;
 } else {
 
     header('Location: ../register');
+    exit;
 
 };

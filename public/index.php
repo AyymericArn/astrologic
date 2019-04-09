@@ -3,6 +3,10 @@
 require '../vendor/autoload.php';
 require '../model/db.php';
 
+// starts session
+
+session_start();
+
 // buffer init
 ob_start();
 
@@ -22,7 +26,8 @@ $router->get('/', function () {
     if ($_SESSION['connected']) {
         require('../views/pages/home.php');        
     } else {
-        header('Location: ./connect');        
+        header('Location: ./register'); 
+        exit;       
     }
 });
 
@@ -42,14 +47,16 @@ $router->get('/calendar', function () {
     if ($_SESSION['connected']) {
         require('../views/pages/calendar.php');        
     } else {
-        header('Location: ./connect');        
+        header('Location: ./register'); 
+        exit;       
     }
 });
 $router->get('/favorite', function () {
     if ($_SESSION['connected']) {
         require('../views/pages/favorite.php');        
     } else {
-        header('Location: ./connect');        
+        header('Location: ./register');  
+        exit;      
     }
 });
 

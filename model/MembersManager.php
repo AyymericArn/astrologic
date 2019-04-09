@@ -34,12 +34,11 @@ class MembersManager {
     }
 
     public function findMember(array $member) {
-        $req = $this->db->prepare('SELECT * FROM members WHERE email=:email AND password=:password');
+        $req = $this->db->prepare('SELECT * FROM members WHERE username=:username AND password=:password');
 
         $req->execute([
-            'email' => $member['email'],
+            'username' => $member['username'],
             'password' => $member['password']
-
         ]);
 
         return $req->fetch();
