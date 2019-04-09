@@ -14,17 +14,33 @@ class Horoscop {
         // $zodiacSign = $_SESSION['userinfos']->zodiac;
         $zodiacSign = 'aquarius';
 
-        $curl = curl_init();      
-        curl_setopt($curl, CURLOPT_URL, "http://json.astrologyapi.com/v1/sun_sign_prediction/daily/$zodiacSign");
-        curl_setopt($curl, CURLOPT_POST, true);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_USERPWD, "604037:673415616a7edb3fad90d6dd81b565eb");
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        $response = curl_exec($curl);
+        $url = "http://json.astrologyapi.com/v1/sun_sign_prediction/daily/$zodiacSign";
 
-        curl_close($curl);
+        $cacheKey = md5($url);
+        $cachePath = '../cache/'.$cacheKey;
+        $hour = intval(date('G')) * 3600 + intval(date('i')) * 60 + intval(date('s'));
 
-        return json_decode($response);
+
+        if (file_exists($cachePath) && (time() - $hour) < filemtime($cachePath)) {
+
+            $result = file_get_contents($cachePath);
+
+            return json_decode($result);
+
+        } else {
+            $curl = curl_init();      
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_USERPWD, "604037:673415616a7edb3fad90d6dd81b565eb");
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            $response = curl_exec($curl);
+    
+            curl_close($curl);
+
+            file_put_contents($cachePath, $response);
+            return json_decode($response);
+        }
     }
 
     public static function aggregate() {
@@ -53,18 +69,32 @@ class Horoscop {
             'day' => 'today'
         ]);
 
-        $curl = curl_init();      
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        $response = curl_exec($curl);
+        $cacheKey = md5($url);
+        $cachePath = '../../cache/'.$cacheKey;
+        $hour = intval(date('G')) * 3600 + intval(date('i')) * 60 + intval(date('s'));
 
-        curl_close($curl);
+        if (file_exists($cachePath) && (time() - $hour) < filemtime($cachePath)) {
 
-        return json_decode($response)->response;
+            $result = file_get_contents($cachePath);
+
+            return json_decode($result)->response;
+
+        } else {
+
+            $curl = curl_init();      
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            $response = curl_exec($curl);
+
+            curl_close($curl);
+
+            file_put_contents($cachePath, $response);
+            return json_decode($response)->response;
+        }
     }
 }
 
 // $horoscop = new Horoscop();
 
-// $horoscop->getQuantifiedHoroscop();
+// $horoscop->aggregate();
