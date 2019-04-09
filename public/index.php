@@ -3,6 +3,10 @@
 require '../vendor/autoload.php';
 require '../model/db.php';
 
+// starts session
+
+session_start();
+
 // buffer init
 ob_start();
 
