@@ -15,15 +15,19 @@ $uri = substr($_SERVER['REQUEST_URI'], 17);
 
 $router = new App\Router($_GET['url']);
 
+// is user login ?
 if (!isset($_SESSION['connected'])) {
     $_SESSION['connected'] = false;
 }
+
+// routing
 
 $router->get('/', function () {
     if ($_SESSION['connected']) {
         require('../views/pages/home.php');        
     } else {
-        header('Location: ./register');        
+        header('Location: ./register'); 
+        exit;       
     }
 });
 
@@ -43,14 +47,16 @@ $router->get('/calendar', function () {
     if ($_SESSION['connected']) {
         require('../views/pages/calendar.php');        
     } else {
-        header('Location: ./register');        
+        header('Location: ./register'); 
+        exit;       
     }
 });
 $router->get('/favorite', function () {
     if ($_SESSION['connected']) {
         require('../views/pages/favorite.php');        
     } else {
-        header('Location: ./register');        
+        header('Location: ./register');  
+        exit;      
     }
 });
 

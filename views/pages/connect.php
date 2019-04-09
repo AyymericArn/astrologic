@@ -1,12 +1,14 @@
-<div>connection</div>
+<img src="public/img/astrologic.png"  alt="Astrologic logo"/>
+<div class="astrologic">Astrologic</div>
 
 <form action="./controller/connect.php" method="post">
 
-    <label for="">username</label>
-    <input type="text" id="username" name="username">
+<input type="text" id="username" name="username" placeholder="Username">
 
-    <label for="password">password</label>
-    <input type="password" id="password" name="password">
+<input type="password" id="password" name="password" placeholder="Password">
 
-    <input type="submit" value="connect">
-</form>
+<input type="submit" id="login" value="login">
+
+<div id="noAccount"> Don't have an account? </div>
+
+<input type="submit" id="create" value="Create">

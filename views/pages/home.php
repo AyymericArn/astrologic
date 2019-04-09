@@ -17,4 +17,4 @@ require('partials/recipe.php');
 require('partials/movie.php');
 
 ?>
-<div>home</div>
+<div>Horoscope</div>

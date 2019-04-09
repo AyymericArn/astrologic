@@ -3,4 +3,5 @@
 composer.phar
 /vendor/
 /cache/
-db.php
+/model/db.php
+/public/css/main.css

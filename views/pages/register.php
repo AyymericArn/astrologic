@@ -1,32 +1,37 @@
-<div>register</div>
+<img class="astrologo" src="public/img/astrologic.png"  alt="Astrologic logo"/>
+<div class="astrologic">Astrologic</div>
 
 <form action="./controller/register.php" method="post">
-    <label for="username">username</label>
-    <input type="text" id="username" name="username">
+    
+    <input type="text" id="username" name="username" placeholder="Username">
 
-    <label for="email">email</label>
-    <input type="email" id="email" name="email">
+    <input type="email" id="email" name="email" placeholder="E-mail">
 
-    <label for="password">password</label>
-    <input type="password" id="password" name="password">
+    
+    <input type="password" id="password" name="password" placeholder="Password">
 
-    <label for="confirm">confirm password</label>
-    <input type="password" id="confirm" name="confirm">
+    <input type="password" id="confirm" name="confirm" placeholder="Confirm password">
 
     <label for="zodiac">Your Zodiac sign</label>
 
     <select name="zodiac" id="zodiac">
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="hamster">Hamster</option>
-        <option value="parrot">Parrot</option>
-        <option value="spider">Spider</option>
-        <option value="goldfish">Goldfish</option>
+        <option value="aries">Aries</option>
+        <option value="taurus">Taurus</option>
+        <option value="gemini">Gemini</option>
+        <option value="cancer">Cancer</option>
+        <option value="leo">Leo</option>
+        <option value="virgo">Virgo</option>
+        <option value="libra">Libra</option>
+        <option value="scorpio">Scorpio</option>
+        <option value="sagittarius">Sagittarius</option>
+        <option value="capricorn">Capricorn</option>
+        <option value="aquarius">Aquarius</option>
+        <option value="pisces">Pisces</option>
     </select>
+    
+    <label for="newsletter_sub" id="newsletter">I want to receive daily emails from Astrologic<input id="newsletter_sub" type="checkbox" name="newsletter_sub" value="1"></label>
+    
 
-    <label for="newsletter_sub">I want to receive daily emails from Astrologic</label>
-    <input id="newsletter_sub" type="checkbox" name="newsletter_sub" value="1">
-
-    <input type="submit" value="validate">
+    <input type="submit" id="newAccount" value="Create account">
 
 </form>
