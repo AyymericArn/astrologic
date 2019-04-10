@@ -1,88 +1,167 @@
-* {
-  display: block;
+.profile_image {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
   margin-left: auto;
   margin-right: auto;
-  font-family: "Capriola", sans-serif;
-  color: rgba(68, 76, 118, 0.92);
-  font-size: 15px; }
-  * label {
-    text-align: center;
-    margin-top: 0px; }
-  * input {
+  margin-top: 40px; }
+  .profile_image .avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0; }
+  .profile_image .close_profile {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    opacity: 0.3; }
+
+.profile_name {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  border-bottom: 2px solid #f5f5f5; }
+  .profile_name p {
+    margin: 15px 0 15px 0; }
+  .profile_name button {
+    background: none;
     border: none;
-    width: 300px;
-    border-bottom: 2px solid #f5f5f5;
-    margin-top: 35px;
+    outline: none;
+    color: #F080A6;
+    margin: 0; }
+
+.account {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(68, 76, 118, 0.92);
+  border-bottom: 2px solid #f5f5f5; }
+  .account .account_edit {
+    display: flex;
+    justify-content: space-between;
+    margin: 0; }
+    .account .account_edit p {
+      width: 150px;
+      margin: 30px 0 10px 0;
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      font-size: 14px; }
+    .account .account_edit img {
+      margin: 30px 0 0 0;
+      width: 20px;
+      height: 20px;
+      transition: all 0.2s cubic-bezier(0.075, 0.825, 0.165, 0.5); }
+  .account .account_form {
+    margin: 0;
+    display: none; }
+    .account .account_form #username_edit {
+      margin-top: 30px; }
+    .account .account_form label {
+      text-align: start;
+      margin: 0; }
+    .account .account_form .account_input {
+      margin: 15px 0 20px 0; }
+    .account .account_form #zodiac_edit {
+      margin: 0 0 10px 0; }
+    .account .account_form select {
+      margin: 0 0 20px 0; }
+
+.account_ {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 2px solid #f5f5f5; }
+  .account_ p {
+    width: 150px;
+    margin: 30px 0 10px 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 14px; }
+  .account_ img {
+    margin: 30px 0 0 0;
+    width: 20px;
+    height: 20px; }
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(68, 76, 118, 0.92);
+  width: 300px; }
+  body .title_astro img {
+    display: flex;
+    width: 40%;
+    margin: 20px auto; }
+  body .title_astro h1 {
+    text-align: center;
+    font-family: "Capriola", sans-serif;
+    font-size: 44px;
+    font-weight: normal;
+    margin: 0 0 30px 0; }
+  body form .choose_title {
+    font-family: "Capriola", sans-serif;
+    width: 300px; }
+    body form .choose_title p {
+      text-align: center; }
+  body form .choose_zodiac_button {
+    display: flex;
+    margin-top: 25px; }
+  body form .choice {
+    display: flex;
+    flex-direction: column;
+    width: 25%; }
+    body form .choice input, body form .choice label {
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      margin: auto;
+      margin-top: 10px;
+      margin-bottom: 10px; }
+    body form .choice input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      border: 2px solid #889AFE;
+      transition: 0.2s all ease;
+      outline: none;
+      margin: auto;
+      position: relative; }
+    body form .choice input:checked {
+      border: 14px solid #889AFE; }
+  body form .news_subscribe {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto; }
+  body form #newsletter {
+    font-family: "Capriola", sans-serif;
     font-size: 15px;
-    outline: none; }
-  * #confirm {
-    margin-bottom: 60px; }
+    margin-top: 30px; }
+  body form #newsletter_sub {
+    font-family: "Montserrat", sans-serif;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 2px solid #f5f5f5; }
 
-.astrologo {
-  width: 40%;
-  height: 40%; }
-
-#zodiac {
-  font-size: 12px;
-  margin-top: 10px;
-  margin-bottom: 0px; }
-
-#newsletter_sub {
-  display: inline;
-  margin-left: 10px;
-  margin-bottom: 20px;
-  margin-top: 20px; }
-
-#newAccount {
-  display: block;
-  width: 255px;
-  height: 46px;
-  text-transform: uppercase;
-  color: white;
-  background: #889AFE;
-  border-radius: 5px;
-  font-size: 12px;
-  margin-top: 10px;
-  font-family: "Montserrat", sans-serif; }
-
-#login {
-  display: block;
-  width: 255px;
-  height: 46px;
-  text-transform: uppercase;
-  color: white;
-  background: #889AFE;
-  border-radius: 5px;
-  font-size: 12px; }
-
-#create {
-  display: block;
-  width: 125px;
-  height: 46px;
-  text-transform: uppercase;
-  color: white;
-  background: #F080A6;
-  border-radius: 5px;
-  font-size: 12px;
-  margin-top: 10px; }
-
-#createAccount {
-  margin-bottom: 40px;
-  text-align: center; }
-
-#noAccount {
-  margin-top: 20px;
-  text-align: center; }
+.next {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end; }
 
 .astrologic {
   font-size: 50px;
   margin-bottom: 30px;
   text-align: center; }
-
-#newsletter {
-  margin-top: 20px;
-  width: 350px;
-  font-size: 12px; }
 
 header {
   display: inline; }
@@ -131,59 +210,5 @@ header {
   right: 5px;
   padding: 5px;
   cursor: pointer; }
-
-.profile_image {
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px; }
-  .profile_image .avatar {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin: 0; }
-  .profile_image .close_profile {
-    width: 20px;
-    height: 20px;
-    margin: 0;
-    opacity: 0.3; }
-
-.profile_name {
-  width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-  border-bottom: 2px solid #f5f5f5; }
-  .profile_name p {
-    margin: 15px 0 15px 0; }
-  .profile_name button {
-    background: none;
-    border: none;
-    outline: none;
-    color: #F080A6;
-    margin: 0; }
-
-.account {
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  color: rgba(68, 76, 118, 0.92);
-  border-bottom: 2px solid #f5f5f5; }
-  .account p {
-    width: 150px;
-    margin: 30px 0 10px 0;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    font-size: 14px; }
-  .account img {
-    margin: 30px 0 0 0;
-    width: 20px;
-    height: 20px; }
 
 /*# sourceMappingURL=main.css.map */
