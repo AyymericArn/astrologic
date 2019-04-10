@@ -1,0 +1,374 @@
+[
+  {
+    "name": "Bitters",
+    "alcoholLvl": "0"
+  },
+  {
+    "name": "Lime juice",
+    "alcoholLvl": "0"
+  },
+  {
+    "name": "Apple juice",
+    "alcoholLvl": "0"
+  },
+  {
+    "name": "Pineapple juice",
+    "alcoholLvl": "0"
+  },
+  {
+    "name": "Sprite",
+    "alcoholLvl": "0"
+  },
+  {
+    "name": "7-Up",
+    "alcoholLvl": "0"
+  },
+  {
+    "name": "Orange juice",
+    "alcoholLvl": "0"
+  },
+  {
+    "name": "Coca-Cola",
+    "alcoholLvl": "0"
+  },
+  {
+    "name": "Apple cider",
+    "alcoholLvl": "3"
+  },
+  {
+    "name": "Cider",
+    "alcoholLvl": "4.50"
+  },
+  {
+    "name": "Corona",
+    "alcoholLvl": "4.60"
+  },
+  {
+    "name": "Zima",
+    "alcoholLvl": "5"
+  },
+  {
+    "name": "Firewater",
+    "alcoholLvl": "5.50"
+  },
+  {
+    "name": "Ale",
+    "alcoholLvl": "5.90"
+  },
+  {
+    "name": "Lager",
+    "alcoholLvl": "6"
+  },
+  {
+    "name": "Guinness stout",
+    "alcoholLvl": "6"
+  },
+  {
+    "name": "Coffee liqueur",
+    "alcoholLvl": "10"
+  },
+  {
+    "name": "Champagne",
+    "alcoholLvl": "12"
+  },
+  {
+    "name": "Red wine",
+    "alcoholLvl": "12-18"
+  },
+  {
+    "name": "Prosecco",
+    "alcoholLvl": "13"
+  },
+  {
+    "name": "Sweet Vermouth",
+    "alcoholLvl": "15"
+  },
+  {
+    "name": "Sloe gin",
+    "alcoholLvl": "15"
+  },
+  {
+    "name": "Creme de Cassis",
+    "alcoholLvl": "15"
+  },
+  {
+    "name": "Hot Damn",
+    "alcoholLvl": "15"
+  },
+  {
+    "name": "Godiva liqueur",
+    "alcoholLvl": "15"
+  },
+  {
+    "name": "Blue Curacao",
+    "alcoholLvl": "15-40"
+  },
+  {
+    "name": "Irish cream",
+    "alcoholLvl": "17"
+  },
+  {
+    "name": "Bailey's irish cream",
+    "alcoholLvl": "17"
+  },
+  {
+    "name": "Baileys irish cream",
+    "alcoholLvl": "17"
+  },
+  {
+    "name": "Dry Vermouth",
+    "alcoholLvl": "18"
+  },
+  {
+    "name": "Sherry",
+    "alcoholLvl": "18"
+  },
+  {
+    "name": "Dubonnet Rouge",
+    "alcoholLvl": "19"
+  },
+  {
+    "name": "Midori melon liqueur",
+    "alcoholLvl": "20"
+  },
+  {
+    "name": "Peachtree schnapps",
+    "alcoholLvl": "20"
+  },
+  {
+    "name": "Kahlua",
+    "alcoholLvl": "21"
+  },
+  {
+    "name": "Coconut rum",
+    "alcoholLvl": "21"
+  },
+  {
+    "name": "Cherry Heering",
+    "alcoholLvl": "21,80"
+  },
+  {
+    "name": "Strawberry schnapps",
+    "alcoholLvl": "22"
+  },
+  {
+    "name": "Advocaat",
+    "alcoholLvl": "23"
+  },
+  {
+    "name": "Apricot brandy",
+    "alcoholLvl": "24"
+  },
+  {
+    "name": "Frangelico",
+    "alcoholLvl": "24"
+  },
+  {
+    "name": "Banana liqueur",
+    "alcoholLvl": "25"
+  },
+  {
+    "name": "Campari",
+    "alcoholLvl": "25"
+  },
+  {
+    "name": "Orange bitters",
+    "alcoholLvl": "28"
+  },
+  {
+    "name": "Amaretto",
+    "alcoholLvl": "28"
+  },
+  {
+    "name": "Black Sambuca",
+    "alcoholLvl": "30"
+  },
+  {
+    "name": "Kiwi liqueur",
+    "alcoholLvl": "31"
+  },
+  {
+    "name": "Southern Comfort",
+    "alcoholLvl": "35"
+  },
+  {
+    "name": "Cherry brandy",
+    "alcoholLvl": "35"
+  },
+  {
+    "name": "Peach Vodka",
+    "alcoholLvl": "35"
+  },
+  {
+    "name": "Blackberry brandy",
+    "alcoholLvl": "35"
+  },
+  {
+    "name": "Vanilla vodka",
+    "alcoholLvl": "35"
+  },
+  {
+    "name": "Jägermeister",
+    "alcoholLvl": "35"
+  },
+  {
+    "name": "Cranberry vodka",
+    "alcoholLvl": "35"
+  },
+  {
+    "name": "Bacardi Limon",
+    "alcoholLvl": "35"
+  },
+  {
+    "name": "Vodka",
+    "alcoholLvl": "37.5"
+  },
+  {
+    "name": "Applejack",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Dark rum",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Scotch",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Triple sec",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Brandy",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Lemon vodka",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Blended whiskey",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Bourbon",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Cognac",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Ouzo",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Johnnie Walker",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Absolut Citron",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Pisco",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Absolut Vodka",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Crown Royal",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Cointreau",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Absolut Kurant",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Grand Marnier",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Cachaca",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Jim Beam",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Maui",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Raspberry vodka",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Apple brandy",
+    "alcoholLvl": "40"
+  },
+  {
+    "name": "Wild Turkey",
+    "alcoholLvl": "40.50"
+  },
+  {
+    "name": "Absinthe",
+    "alcoholLvl": "40-90"
+  },
+  {
+    "name": "Sambuca",
+    "alcoholLvl": "42"
+  },
+  {
+    "name": "Goldschlager",
+    "alcoholLvl": "43.50"
+  },
+  {
+    "name": "Gin",
+    "alcoholLvl": "45"
+  },
+  {
+    "name": "Tequila",
+    "alcoholLvl": "45"
+  },
+  {
+    "name": "Añejo rum",
+    "alcoholLvl": "45"
+  },
+  {
+    "name": "Ricard",
+    "alcoholLvl": "45"
+  },
+  {
+    "name": "Jack Daniels",
+    "alcoholLvl": "45"
+  },
+  {
+    "name": "Peppermint schnapps",
+    "alcoholLvl": "49.50"
+  },
+  {
+    "name": "Yukon Jack",
+    "alcoholLvl": "50"
+  },
+  {
+    "name": "Mezcal",
+    "alcoholLvl": "50"
+  },
+  {
+    "name": "Everclear",
+    "alcoholLvl": "75"
+  },
+  {
+    "name": "151 proof rum",
+    "alcoholLvl": "75.50"
+  }
+]

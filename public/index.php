@@ -15,9 +15,14 @@ $uri = substr($_SERVER['REQUEST_URI'], 17);
 
 $router = new App\Router($_GET['url']);
 
+$_SESSION['connected'] = true;
+
+// is user login ?
 if (!isset($_SESSION['connected'])) {
     $_SESSION['connected'] = false;
 }
+
+// routing
 
 $router->get('/', function () {
     if ($_SESSION['connected']) {
@@ -53,6 +58,15 @@ $router->get('/favorite', function () {
         require('../views/pages/favorite.php');        
     } else {
         header('Location: ./register');  
+        exit;      
+    }
+});
+
+$router->get('/account', function () {
+    if ($_SESSION['connected']) {
+        require('../views/pages/account.php');        
+    } else {
+        header('Location: ./account');  
         exit;      
     }
 });
