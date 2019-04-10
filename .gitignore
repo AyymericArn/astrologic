@@ -4,6 +4,7 @@ composer.phar
 /vendor/
 /cache/
 /model/db.php
+/model/db_server.php
 /public/css/main.css
 /public/css/main.css.map
 

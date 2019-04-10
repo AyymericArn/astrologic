@@ -6,7 +6,7 @@ $check = $db->query("SELECT * FROM subscribers WHERE mail='$mail'");
 $result = $check->fetch();
 
 if (!$result) {
-    $req = $db->prepare('INSERT INTO subscribers(sign, mail) VALUES (:sign, :mail)');
+    $req = $db->prepare('INSERT INTO subscribers(sign, mail, hash) VALUES (:sign, :mail, :hash)');
     
     $req->execute([
         'sign' => $zodiac,
