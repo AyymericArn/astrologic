@@ -1,6 +1,14 @@
 <?php
 
-require('../Horoscop.php');
+// use Controllers\Horoscop as Horoscop;
+
+// namespace Controllers\CocktailController\Cocktail;
+
+// if (!isset($path)) {
+//     $path='../'
+// }
+
+// require('../Horoscop.php');
 
 class Cocktail extends Horoscop {
 
@@ -41,7 +49,7 @@ class Cocktail extends Horoscop {
         }
 
 
-        $ingredients = json_decode(file_get_contents('./ingredients.json'));
+        $ingredients = json_decode(file_get_contents('../controller/CocktailController/ingredients.json'));
 
         $this->ingredient = $ingredients[$index];
     }
@@ -57,7 +65,7 @@ class Cocktail extends Horoscop {
         ]);
 
         $cacheKey = md5($url);
-        $cachePath = '../../cache/'.$cacheKey;
+        $cachePath = '../cache/'.$cacheKey;
         $hour = intval(date('G')) * 3600 + intval(date('i')) * 60 + intval(date('s'));
 
         if (file_exists($cachePath) && (time() - $hour) < filemtime($cachePath)) {
@@ -105,7 +113,7 @@ class Cocktail extends Horoscop {
         ]);
 
         $cacheKey = md5($url);
-        $cachePath = '../../cache/'.$cacheKey;
+        $cachePath = '../cache/'.$cacheKey;
         $hour = intval(date('G')) * 3600 + intval(date('i')) * 60 + intval(date('s'));
 
         if (file_exists($cachePath) && (time() - $hour) < filemtime($cachePath)) {

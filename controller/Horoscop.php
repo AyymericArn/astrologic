@@ -1,5 +1,7 @@
 <?php
 
+// namespace Controllers;
+
 class Horoscop {
 
     private $test = [];
@@ -10,9 +12,10 @@ class Horoscop {
 
     // using AstrologyApi
 
-    public static function getHoroscop() {
+    public static function getHoroscop($zodiacName) {
         // $zodiacSign = $_SESSION['userinfos']->zodiac;
-        $zodiacSign = 'aquarius';
+        // $zodiacSign = 'aquarius';
+        $zodiacSign = $zodiacName;
 
         $url = "http://json.astrologyapi.com/v1/sun_sign_prediction/daily/$zodiacSign";
 
@@ -43,8 +46,8 @@ class Horoscop {
         }
     }
 
-    public static function aggregate() {
-        $horoscop = self::getHoroscop();
+    public static function aggregate($zodiacName) {
+        $horoscop = self::getHoroscop($zodiacName);
         $fullText = (
             $horoscop->prediction->personal_life . ' ' .
             $horoscop->prediction->profession . ' ' .
@@ -70,7 +73,7 @@ class Horoscop {
         ]);
 
         $cacheKey = md5($url);
-        $cachePath = '../../cache/'.$cacheKey;
+        $cachePath = '../cache/'.$cacheKey;
         $hour = intval(date('G')) * 3600 + intval(date('i')) * 60 + intval(date('s'));
 
         if (file_exists($cachePath) && (time() - $hour) < filemtime($cachePath)) {
