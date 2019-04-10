@@ -6,3 +6,4 @@ composer.phar
 /model/db.php
 /public/css/main.css
 /public/css/main.css.map
+/.sass-cache/
