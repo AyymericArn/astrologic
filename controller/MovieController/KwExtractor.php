@@ -6,12 +6,13 @@ class KwExtractor extends Horoscop {
 
     protected $analysis;
 
-    public function __construct() {
-        $this->interpret();
+    public function __construct($zodiacName) {
+        $this->interpret($zodiacName);
     }
 
-    public function interpret() {
-        $text = parent::aggregate();
+    public function interpret($zodiacName) {
+
+        $text = parent::aggregate($zodiacName);
 
         $curlPostData = json_encode([
             'text' => $text,

@@ -38,14 +38,14 @@ class Meal extends Horoscop {
         ]);
 
         $cacheKey = md5($url);
-        $cachePath = '../../cache/'.$cacheKey;
+        $cachePath = '../cache/'.$cacheKey;
         $hour = intval(date('G')) * 3600 + intval(date('i')) * 60 + intval(date('s'));
 
         if (file_exists($cachePath) && (time() - $hour) < filemtime($cachePath)) {
 
             $result = file_get_contents($cachePath);
 
-            return json_decode($result)->hits[0];
+            return json_decode($result)->hits[0]->recipe;
 
         } else {
 
@@ -60,8 +60,9 @@ class Meal extends Horoscop {
             file_put_contents($cachePath, $response);
             
             $result = json_decode($response);
+
             // shall be randomized
-            return $result->hits[0];
+            return $result->hits[0]->recipe;
         }
     }
 }

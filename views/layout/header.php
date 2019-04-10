@@ -4,7 +4,7 @@
     // var_dump($_SESSION['errors']);
     
     // Display error message
-    if($_SESSION['errors']) {
+    if(isset($_SESSION['errors'])) {
         foreach ($_SESSION['errors'] as $error) { ?>
         
         <div class="error"><?= $error ?></div>

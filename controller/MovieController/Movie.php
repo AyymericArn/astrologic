@@ -6,8 +6,8 @@ class Movie extends KwExtractor {
 
     private $existingKeywords;
 
-    public function __construct() {
-        parent::__construct();
+    public function __construct($zodiacName) {
+        parent::__construct($zodiacName);
         $this->getKeyword();
     }
 
@@ -37,11 +37,10 @@ class Movie extends KwExtractor {
 
             curl_close($curl);
 
-            if (intval($result->total_results) !== 0) {
+            if (intval($result->total_results) > 2) {
                $found = true;
             } else {
                 $i++;
-                echo $found;
             }
         }
 
@@ -50,24 +49,39 @@ class Movie extends KwExtractor {
     }
 
     public function getMovie() {
-        $id = $this->existingKeywords[0]->id;
 
-        $url = "https://api.themoviedb.org/3/keyword/$id/movies?";
+        $found = false;
 
-        $url .= http_build_query([
-            'api_key' => 'd855544639d03d8109ffab35d0662cd1'
-        ]);
+        $i = 0;
+        while (!$found) {
+            
+            $id = $this->existingKeywords[$i]->id;
+    
+            $url = "https://api.themoviedb.org/3/keyword/$id/movies?";
+    
+            $url .= http_build_query([
+                'api_key' => 'd855544639d03d8109ffab35d0662cd1'
+            ]);
+    
+            $curl = curl_init();      
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            $response = curl_exec($curl);
+    
+            $result = json_decode($response);
+    
+            curl_close($curl);
 
-        $curl = curl_init();      
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        $response = curl_exec($curl);
-
-        $result = json_decode($response);
-
-        curl_close($curl);
+            if (intval($result->total_results) !== 0) {
+                $found = true;
+            } else {
+                $i++;
+            }
+            
+        }
         
+        // shall be randomized
         return $result->results[0];
     }
 }

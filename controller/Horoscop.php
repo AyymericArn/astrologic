@@ -12,9 +12,10 @@ class Horoscop {
 
     // using AstrologyApi
 
-    public static function getHoroscop() {
+    public static function getHoroscop($zodiacName) {
         // $zodiacSign = $_SESSION['userinfos']->zodiac;
-        $zodiacSign = 'aquarius';
+        // $zodiacSign = 'aquarius';
+        $zodiacSign = $zodiacName;
 
         $url = "http://json.astrologyapi.com/v1/sun_sign_prediction/daily/$zodiacSign";
 
@@ -45,8 +46,8 @@ class Horoscop {
         }
     }
 
-    public static function aggregate() {
-        $horoscop = self::getHoroscop();
+    public static function aggregate($zodiacName) {
+        $horoscop = self::getHoroscop($zodiacName);
         $fullText = (
             $horoscop->prediction->personal_life . ' ' .
             $horoscop->prediction->profession . ' ' .
