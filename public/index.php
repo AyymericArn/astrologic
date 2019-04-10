@@ -18,8 +18,9 @@ $router = new App\Router($_GET['url']);
 // routing
 
 $router->get('/', function () {
-    if ($_SESSION['sign']) {
-        require('../views/pages/home.php');        
+    if (isset($_SESSION['zodiac'])) {
+        global $db;
+        require('../views/pages/home.php');
     } else {
         header('Location: ./select'); 
         exit;       
@@ -30,16 +31,17 @@ $router->get('/', function () {
 //     require('../views/pages/connect.php');
 // });
 
-// $router->get('/register', function () {
-//     require('../views/pages/register.php');
-// });
+$router->get('/register', function () {
+    require('../views/pages/register.php');
+});
 
+// change when it's good
 $router->get('/select', function () {
-    require('../views/pages/select.php');
+    require('../views/pages/register.php');
 });
 
 $router->get('/calendar', function () {
-    if (isset($_SESSION['sign'])) {
+    if (isset($_SESSION['zodiac'])) {
         require('../views/pages/calendar.php');        
     } else {
         header('Location: ./select'); 

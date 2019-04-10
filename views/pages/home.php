@@ -7,11 +7,7 @@
 $cacheRoot = './';
 
 // imports relevant classes
-require('../controller/Horoscop.php');
-require('../controller/CocktailController/Cocktail.php');
-require('../controller/MealController/Meal.php');
-require('../controller/MovieController/KwExtractor.php');
-require('../controller/MovieController/Movie.php');
+
 
 // Display success message
 if(isset($_SESSION['success'])) {
@@ -29,6 +25,20 @@ require('partials/recipe.php');
 require('partials/movie.php');
 */
 ?>
+
+
+<?php
+
+// require('../model/db.php');
+require('../model/DataManager.php');
+
+$getter = new DataManager($db);
+$data = $getter->getData($_SESSION['zodiac']);
+echo $data->movie_year;
+
+?>
+
+
 <h2>Horoscope</h2>
 
 <span id="horoscope">

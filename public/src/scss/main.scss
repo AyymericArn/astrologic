@@ -295,3 +295,14 @@ header {
     cursor: pointer;
 }
 
+form .next input[type="submit"] {
+    padding: 10px 20px;
+    border:none;
+    background: transparent;
+}
+form .next img {
+    position: absolute;
+    padding-right: 10px;
+    padding-top: 7px;
+    z-index: -5;
+}
