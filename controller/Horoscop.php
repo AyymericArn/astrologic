@@ -1,5 +1,7 @@
 <?php
 
+// namespace Controllers;
+
 class Horoscop {
 
     private $test = [];
@@ -70,7 +72,7 @@ class Horoscop {
         ]);
 
         $cacheKey = md5($url);
-        $cachePath = '../../cache/'.$cacheKey;
+        $cachePath = '../cache/'.$cacheKey;
         $hour = intval(date('G')) * 3600 + intval(date('i')) * 60 + intval(date('s'));
 
         if (file_exists($cachePath) && (time() - $hour) < filemtime($cachePath)) {

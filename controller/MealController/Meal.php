@@ -1,6 +1,6 @@
 <?php
 
-require('../Horoscop.php');
+// require('../Horoscop.php');
 
 class Meal extends Horoscop {
 

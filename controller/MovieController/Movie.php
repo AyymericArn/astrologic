@@ -1,6 +1,6 @@
 <?php
 
-require('./KwExtractor.php');
+// require('./KwExtractor.php');
 
 class Movie extends KwExtractor {
 
