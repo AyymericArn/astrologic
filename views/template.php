@@ -13,6 +13,7 @@
     <?php include('../views/layout/header.php'); ?>
     <?= $content ?>
     <?php include('../views/layout/footer.php'); ?>
+    <script type="module" src="./public/js/account.js"></script>
     <script type="module" src="./public/js/app.js"></script>
 </body>
 </html>

@@ -1,37 +1,75 @@
-<img class="astrologo" src="public/img/astrologic.png"  alt="Astrologic logo"/>
-<div class="astrologic">Astrologic</div>
+<div class="title_astro">
+    <img src="public/img/astrologic.png"  alt="Astrologic logo"/>
+    <h1>Astrologic</h1>
+</div>
 
 <form action="./controller/register.php" method="post">
+    <div class="choose_title">
+        <p>Choose your zodiac sign*</p>
+    </div>
     
-    <input type="text" id="username" name="username" placeholder="Username">
-
-    <input type="email" id="email" name="email" placeholder="E-mail">
-
+    <div class="choose_zodiac_button">
+        <div class="choice">
+            <input type="radio" id="Aries" name="selector">
+            <label for="Aries">Aries</label>
+        </div>
+        <div class="choice">
+            <input type="radio" id="Taurus" name="selector">
+            <label for="Taurus">Taurus</label>
+        </div>
+        <div class="choice">
+            <input type="radio" id="Gemini" name="selector">
+            <label for="Gemini">Gemini</label>
+        </div>
+        <div class="choice">
+            <input type="radio" id="Cancer" name="selector">
+            <label for="Cancer">Cancer</label>
+        </div>
+    </div>
+    <div class="choose_zodiac_button">
+        <div class="choice">
+            <input type="radio" id="Leo" name="selector">
+            <label for="Leo">Leo</label>
+        </div>
+        <div class="choice">
+            <input type="radio" id="Libra" name="selector">
+            <label for="Libra">Libra</label>
+        </div>
+        <div class="choice">
+            <input type="radio" id="Pisces" name="selector">
+            <label for="Pisces">Pisces</label>
+        </div>
+        <div class="choice">
+            <input type="radio" id="Aquarius" name="selector">
+            <label for="Aquarius">Aquarius</label>
+        </div>
+    </div>
+    <div class="choose_zodiac_button">
+        <div class="choice">
+            <input type="radio" id="Scorpio" name="selector">
+            <label for="Scorpio">Scorpio</label>
+        </div>
+        <div class="choice">
+            <input type="radio" id="Capricorn" name="selector">
+            <label for="Capricorn">Capricorn</label>
+        </div>
+        <div class="choice">
+            <input type="radio" id="Sagittarius" name="selector">
+            <label for="Sagittarius">Sagittarius</label>
+        </div>
+        <div class="choice">
+            <input type="radio" id="Virgo" name="selector">
+            <label for="Virgo">Virgo</label>
+        </div>
+    </div>
     
-    <input type="password" id="password" name="password" placeholder="Password">
-
-    <input type="password" id="confirm" name="confirm" placeholder="Confirm password">
-
-    <label for="zodiac">Your Zodiac sign</label>
-
-    <select name="zodiac" id="zodiac">
-        <option value="aries">Aries</option>
-        <option value="taurus">Taurus</option>
-        <option value="gemini">Gemini</option>
-        <option value="cancer">Cancer</option>
-        <option value="leo">Leo</option>
-        <option value="virgo">Virgo</option>
-        <option value="libra">Libra</option>
-        <option value="scorpio">Scorpio</option>
-        <option value="sagittarius">Sagittarius</option>
-        <option value="capricorn">Capricorn</option>
-        <option value="aquarius">Aquarius</option>
-        <option value="pisces">Pisces</option>
-    </select>
+    <div class="news_subscribe">
+        <label for="newsletter_sub" id="newsletter">Want to receive your daily horoscope ?</label>
+        <input type="text" id="newsletter_sub" placeholder="email@mail.com"></input>
+    </div>
     
-    <label for="newsletter_sub" id="newsletter">I want to receive daily emails from Astrologic<input id="newsletter_sub" type="checkbox" name="newsletter_sub" value="1"></label>
-    
-
-    <input type="submit" id="newAccount" value="Create account">
-
 </form>
+
+<div class="next">
+    <img src="public/img/arrow-right.svg" alt="arrow next">
+</div>
