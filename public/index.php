@@ -66,6 +66,12 @@ $router->get('/calendar', function () {
 //     }
 // });
 
+// change when it's good
+$router->get('/unsubscribe/:hash', function ($hash) {
+    global $db;
+    require('../views/pages/unsubscribe.php');
+});
+
 $router->post('/controller/register', function () {
     echo 'posted';
 });

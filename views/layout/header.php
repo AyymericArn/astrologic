@@ -10,7 +10,15 @@
         <div class="error"><?= $error ?></div>
 
     <?php }}
-    $_SESSION['errors'] = [] ?>
+    $_SESSION['errors'] = [];
+
+    if(isset($_SESSION['success'])) {
+        foreach ($_SESSION['success'] as $success) { ?>
+            
+        <div class="success"><?= $success ?></div>
+
+    <?php }}
+    $_SESSION['success'] = []; ?>
 
     
 </header>

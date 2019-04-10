@@ -10,13 +10,7 @@ $cacheRoot = './';
 
 
 // Display success message
-if(isset($_SESSION['success'])) {
-    foreach ($_SESSION['success'] as $success) { ?>
-        
-    <div class="success"><?= $success ?></div>
 
-<?php }}
-$_SESSION['success'] = [];
 
 /*
 require('partials/horoscope.php');
