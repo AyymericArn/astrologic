@@ -40,14 +40,63 @@
         margin: 0;
     }
 }
-.account {
 
+
+.account{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $darkblue;
+    border-bottom: 2px solid $primary-white;
+    .account_edit {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        p {
+        width: 150px;
+        margin: 30px 0 10px 0;
+        font-family: $content-font;
+        font-weight: bold;
+        font-size: 14px;
+        }
+        img {
+            margin: 30px 0 0 0;
+            width: 20px;
+            height: 20px;
+            transition: all 0.2s cubic-bezier(0.075, 0.825, 0.165, 0.5);
+        }
+    }
+    .account_form {
+        margin: 0;
+        display: none;
+        #username_edit{
+            margin-top: 30px;
+        }
+        label {
+            text-align: start;
+            margin:0;
+        }
+        .account_input {
+            margin: 15px 0 20px 0;
+            
+        }
+        #zodiac_edit {
+            margin: 0 0 10px 0;
+        }
+        select {
+            margin: 0 0 20px 0;
+        }
+    }
+    
+}
+.account_ {
     display: flex;
     justify-content: space-between;
     width: 300px;
     margin-left: auto;
     margin-right: auto;
-    color: $darkblue;
     border-bottom: 2px solid $primary-white;
     p {
         width: 150px;
