@@ -1,6 +1,5 @@
-<img src="public/img/astrologic.png"  alt="Astrologic logo"/>
+<img class="astrologo" src="public/img/astrologic.png"  alt="Astrologic logo"/>
 <div class="astrologic">Astrologic</div>
-<div id="createAccount">Create your account</div>
 
 <form action="./controller/register.php" method="post">
     
@@ -30,7 +29,7 @@
         <option value="pisces">Pisces</option>
     </select>
     
-    <label for="newsletter_sub">I want to receive daily emails from Astrologic<input id="newsletter_sub" type="checkbox" name="newsletter_sub" value="1"></label>
+    <label for="newsletter_sub" id="newsletter">I want to receive daily emails from Astrologic<input id="newsletter_sub" type="checkbox" name="newsletter_sub" value="1"></label>
     
 
     <input type="submit" id="newAccount" value="Create account">
