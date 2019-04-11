@@ -9,10 +9,13 @@ class Mailer extends DataManager {
 
     private $db;
     private $mailList;
+    private $mailTemplates = [];
 
     public function __construct(PDO $db) {
         parent::__construct($db);
         $this->db = $db;
+        $this->fetchMailingList();
+        $this->generateMails();
     }
 
     public function fetchMailingList() {
@@ -45,10 +48,12 @@ class Mailer extends DataManager {
 
             require('../views/layout/mail_layout.php');
 
+            $this->mailTemplates[$zodiacSign] = $mailContent;
         }
+
     }
     
-    public function sendMail($adress) {
+    public function sendMail($adress, $mailContent) {
         $apikey = 'd89c13a09ade2fd37e177ca5b1899ff8';
         $apisecret = 'c6661ba7160162d3fff2436c68f84105';
         
@@ -58,18 +63,18 @@ class Mailer extends DataManager {
             'Messages' => [
                 [
                     'From' => [
-                        'Email' => "ulysse.ferte@hetic.net",
-                        'Name' => "Ulysse Ferté"
+                        'Email' => "daily@astrologiic.space",
+                        'Name' => "Astrologic"
                     ],
                     'To' => [
                         [
-                            'Email' => "aymericarnoult@gmail.com",
+                            'Email' => $adress,
                             'Name' => "passenger 1"
                         ]
                     ],
                     'Subject' => "Your email flight plan!",
                     'TextPart' => "Dear passenger 1, welcome to Mailjet! May the delivery force be with you!",
-                    'HTMLPart' => "<h3>Dear passenger 1, welcome to Mailjet!</h3><br />May the delivery force be with you!"
+                    'HTMLPart' => $mailContent
                 ]
             ]
         ];
@@ -78,10 +83,23 @@ class Mailer extends DataManager {
     }
 
     public function sendAllMails() {
-        # code...
+        foreach ($this->mailList as $subscriber) {
+            $mailContent = $this->mailTemplates[$subscriber->sign];
+            // change for prod
+
+            $url = 'https://francoisxaviermanceau.fr/hetic_projects/astrologic/unsubscribe/'.md5($subscriber->mail);
+
+            $mailBody = str_replace(
+                'URLGOESHERE',
+                $url,
+                $mailContent
+            );
+
+            $this->sendMail($subscriber->mail, $mailBody);
+        }
     }
 }
 
 $mailer = new Mailer($db);
 
-$mailer->generateMails();
+$mailer->sendAllMails();

@@ -1,4 +1,5 @@
 const init = (range) => {
+  
   const $vignette = document.querySelectorAll('.vignette')
   const $button = document.querySelectorAll('.button')
   const $infos = document.querySelectorAll('.infos')
@@ -64,14 +65,7 @@ init(0);
 
 // infinite scroll
 
-// const appendCard = (data, i) => {
-//   let vignette = document.createElement('div').classList.add('vignette');
-//     let show = document.createElement('div').classList.add('show');
-//       let title = document.createElement('div').classList.add('title'); 
-//         let date = document.createElement('div').classList.add('date'); date.textContent = new Date(Date.now() - 86400 *i).getDate();
-// }
-
-const url = 'http://localhost/hetic/astrologic/feed';
+const url = 'https://francoisxaviermanceau.fr/hetic_projects/astrologic//feed';
 let daysBefore = 10;
 const index = document.cookie.lastIndexOf(';');
 const zodiac = document.cookie.substring(7, index);

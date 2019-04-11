@@ -9,6 +9,7 @@ if (!isset($_COOKIE['zodiac'])) {
 }
 
 $getter = new DataManager($db);
+
 $data = $getter->getData($_SESSION['zodiac']);
 
 // horoscop scores

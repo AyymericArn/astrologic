@@ -7,6 +7,7 @@ composer.phar
 /model/db_server.php
 /public/css/main.css
 /public/css/main.css.map
+others/
 .remind
 
 ### Sass ###
