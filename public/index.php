@@ -64,6 +64,7 @@ $router->get('/calendar', function () {
 $router->get('/unsubscribe/:hash', function ($hash) {
     global $db;
     require('../views/pages/unsubscribe.php');
+    $pathModifier = '.';
 });
 
 // infinite scroll
