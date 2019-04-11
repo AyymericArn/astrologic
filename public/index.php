@@ -75,6 +75,15 @@ $router->get('/unsubscribe/:hash', function ($hash) {
     require('../views/pages/unsubscribe.php');
 });
 
+$router->get('/home_horoscop', function () {
+    if ($_SESSION['connected']) {
+        require('../views/pages/home-horoscop.php');        
+    } else {
+        header('Location: ./home_horoscop');  
+        exit;      
+    }
+});
+
 $router->post('/controller/register', function () {
     echo 'posted';
 });
