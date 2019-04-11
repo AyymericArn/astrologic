@@ -71,6 +71,15 @@ $router->get('/account', function () {
     }
 });
 
+$router->get('/home_horoscop', function () {
+    if ($_SESSION['connected']) {
+        require('../views/pages/home-horoscop.php');        
+    } else {
+        header('Location: ./home_horoscop');  
+        exit;      
+    }
+});
+
 $router->post('/controller/register', function () {
     echo 'posted';
 });

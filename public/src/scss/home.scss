@@ -1,0 +1,187 @@
+body {
+    .header_home {
+        display: flex;
+        margin-top: 30px;
+        .menu_home {
+            margin-top: 10px;
+            width: 20px; 
+            height: 20px;
+        }
+        .logo_home {
+            width: 50px;
+            height: 50px;
+            margin-left: 40%;
+        }
+    }
+    margin-left: auto;
+    margin-right: auto;
+    color: $darkblue;
+    width: 300px;
+    h1 {
+        font-family: $title-font;
+        font-size: 24px;
+        margin: 30px 0 20px 0;
+    }
+    .horoscope {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        width: calc(100%-32px);
+        height: 100%;
+        padding: 6px 16px;
+        background-color: $purple;
+        border-radius: 4px;
+      }
+      
+      .header_horoscope {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        height: 26px;
+      }
+      
+      .title {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 60px;
+        font-size: 18px;
+        font-family: $title-font;
+        color: #fff;
+        img {
+            width: 30px;
+            height:30px;
+        }
+      }
+      
+      .title_horoscope {
+        display: flex;
+        align-items: flex-end;
+        font-size: 14px;
+        font-weight: 300;
+        font-family: $title-font;
+      }
+      
+      .button_horoscope {
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
+        font-family: $title-font;
+        color: #fff;
+      }
+      
+      .text_horoscope {
+        font-family: $content-font;
+        font-size: 12px;
+        color: $primary-white;
+      }
+    // .horoscope {
+    //     width: 100%;
+    //     background: $purple;
+    //     font-family: $title-font;
+    //     color: $primary-white;
+    //     height: 100%;
+    //     border-radius: 5px;
+    //     .header_horoscope {
+    //         display: flex;
+    //         justify-content: space-between;
+    //         margin:10px;
+    //         .header_horoscope_title {
+    //             display: flex;
+    //             img {
+    //                 width: 30px;
+    //                 height: 30px;
+    //             }
+    //         }
+    //         .plus_home {
+    //             width: 20px;
+    //             height: 20px;
+    //             margin:0;
+    //         }
+    //     }
+    //     .horoscope_text {
+    //         margin: 10px;
+    //         p{
+    //             font-size: 12px;
+    //             font-family: $content-font;
+    //         }
+    //     }
+        
+    // }
+    .vignette {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        width: calc(100%-32px);
+        height: 26px;
+        padding: 6px 16px;
+        background-color: $pink;
+        border-radius: 4px;
+        margin: 16px 0 16px 0;
+        .vignette-display {
+          height: 100%;
+        }
+      }
+      .vignette_1 {
+          background: $bluegreen;
+      }
+      .vignette_2 {
+          background: $yellow;
+      }
+      .vignette_3 {
+        background: $purple;
+    }
+      
+      
+      .show {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        height: 26px;
+      }
+      
+      .title {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 60px;
+        font-size: 18px;
+        font-family: $content-font;
+        color: #fff;
+      }
+      
+      .month {
+        display: flex;
+        align-items: flex-end;
+        font-size: 14px;
+        font-weight: 300;
+      }
+      
+      .button {
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
+        font-family: $content-font;
+        color: #fff;
+      }
+      
+      .infos {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        font-family: $content-font;
+        color: $primary-white;
+        font-size: 14px;
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+        }
+      }
+}

@@ -94,6 +94,127 @@ body {
   margin-right: auto;
   color: rgba(68, 76, 118, 0.92);
   width: 300px; }
+  body .header_home {
+    display: flex;
+    margin-top: 30px; }
+    body .header_home .menu_home {
+      margin-top: 10px;
+      width: 20px;
+      height: 20px; }
+    body .header_home .logo_home {
+      width: 50px;
+      height: 50px;
+      margin-left: 40%; }
+  body h1 {
+    font-family: "Capriola", sans-serif;
+    font-size: 24px;
+    margin: 30px 0 20px 0; }
+  body .horoscope {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    width: calc(100%-32px);
+    height: 100%;
+    padding: 6px 16px;
+    background-color: #889AFE;
+    border-radius: 4px; }
+  body .header_horoscope {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 26px; }
+  body .title {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 60px;
+    font-size: 18px;
+    font-family: "Capriola", sans-serif;
+    color: #fff; }
+    body .title img {
+      width: 30px;
+      height: 30px; }
+  body .title_horoscope {
+    display: flex;
+    align-items: flex-end;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: "Capriola", sans-serif; }
+  body .button_horoscope {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    font-family: "Capriola", sans-serif;
+    color: #fff; }
+  body .text_horoscope {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    color: #f5f5f5; }
+  body .vignette {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    width: calc(100%-32px);
+    height: 26px;
+    padding: 6px 16px;
+    background-color: #F080A6;
+    border-radius: 4px;
+    margin: 16px 0 16px 0; }
+  body .vignette_1 {
+    background: #67D5DC; }
+  body .vignette_2 {
+    background: #FECF58; }
+  body .vignette_3 {
+    background: #889AFE; }
+  body .vignette-display {
+    height: 100%; }
+  body .show {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 26px; }
+  body .title {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 60px;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    color: #fff; }
+  body .month {
+    display: flex;
+    align-items: flex-end;
+    font-size: 14px;
+    font-weight: 300; }
+  body .button {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    color: #fff; }
+  body .infos {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-family: "Montserrat", sans-serif;
+    color: #f5f5f5;
+    font-size: 14px; }
+    body .infos .info-row {
+      display: flex;
+      justify-content: space-between; }
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(68, 76, 118, 0.92);
+  width: 300px; }
   body .title_astro img {
     display: flex;
     width: 40%;
