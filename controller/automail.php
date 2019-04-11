@@ -1,14 +1,51 @@
 <?php
 
+require '../model/db.php';
+require '../model/DataManager.php';
 require '../vendor/autoload.php';
 use \Mailjet\Resources;
 
-class Mailer {
+class Mailer extends DataManager {
 
     private $db;
+    private $mailList;
 
     public function __construct(PDO $db) {
+        parent::__construct($db);
         $this->db = $db;
+    }
+
+    public function fetchMailingList() {
+        $req = $this->db->query('SELECT sign, mail FROM subscribers');
+
+        $this->mailList = $req->fetchAll();
+
+        // foreach mailList as subscriber...
+    }
+
+    public function generateMails() {
+
+        $zodiacList = [
+            'aries',
+            'taurus',
+            'gemini',
+            'cancer',
+            'leo',
+            'virgo',
+            'libra',
+            'scorpio',
+            'sagittarius',
+            'capricorn',
+            'aquarius',
+            'pisces'
+        ];
+        
+        foreach ($zodiacList as $zodiacSign) {
+            $data = $this->getData($zodiacSign);
+
+            require('../views/layout/mail_layout.php');
+
+        }
     }
     
     public function sendMail($adress) {
@@ -44,3 +81,7 @@ class Mailer {
         # code...
     }
 }
+
+$mailer = new Mailer($db);
+
+$mailer->generateMails();

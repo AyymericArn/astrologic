@@ -15,10 +15,13 @@ $uri = substr($_SERVER['REQUEST_URI'], 17);
 
 $router = new App\Router($_GET['url']);
 
+$hasZodiac = isset($_SESSION['zodiac']) || isset($_COOKIE['zodiac']);
+
 // routing
 
 $router->get('/', function () {
-    if (isset($_SESSION['zodiac'])) {
+    global $hasZodiac;
+    if ($hasZodiac) {
         global $db;
         require('../views/pages/home.php');
     } else {
