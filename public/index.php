@@ -23,7 +23,7 @@ $router->get('/', function () {
     global $hasZodiac;
     if ($hasZodiac) {
         global $db;
-        require('../views/pages/home.php');
+        require('../views/pages/home-horoscop.php');
     } else {
         header('Location: ./select'); 
         exit;       

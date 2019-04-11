@@ -1,3 +1,36 @@
+<?php
+
+require('../model/DataManager.php');
+
+if (!isset($_COOKIE['zodiac'])) {
+    setcookie('zodiac', $_SESSION['zodiac'], time() + 365*24*3600, null, null, false, true);
+} else {
+    $_SESSION['zodiac'] = $_COOKIE['zodiac'];
+}
+
+$getter = new DataManager($db);
+$data = $getter->getData($_SESSION['zodiac']);
+
+// horoscop scores
+
+$scores = json_decode($data->horoscop_scores, true);
+arsort($scores);
+
+for ($i=0; $i < 6; $i++) { 
+    array_pop($scores);
+}
+
+$scoresTags = array_keys($scores);
+
+// fetch previous days datas
+
+$oldData = [];
+for ($i=1; $i < 6; $i++) { 
+  $oldData[$i] = $getter->getOldData($_SESSION['zodiac'], $i);
+}
+
+?>
+  
 <!-- menu -->
 <div class="header_home">
     <img class="menu_home" src="public/img/menu.svg" alt="">
@@ -10,20 +43,22 @@
   <div class="header_horoscope">
     <div class="title">
       <img src="public/img/zodiac-aquarius.svg" alt="zodiac sign aquarius">
-      <div class="title_horoscope">Horoscope</div>
+      <div class="title_horoscope"><?= ucfirst($_SESSION['zodiac']) ?></div>
     </div>
     <div class="button_horoscope">+</div>
   </div>
   <div class="text_horoscope">
-    <p>Luck and prosperity lie within your grasp now, Aquarius. The only problem is that you might not notice because you're so caught up in some emotional drama that occupies...</p>
+    <p><?= $data->horoscop_desc ?></p>
   </div>
 
   <!-- add infos onclick -->
   <div class="text_horoscope horoscope_more">
     <p>Luck and prosperity lie within your grasp now, Aquarius. The only problem is that you might not notice because you're so caught up in some emotional drama that occupies...</p>
     <div class="horoscope_rating">
-      <p>75</p>    
-      <div class="health">Health</div>
+      <p><?= $scores[$scoresTags[0]] ?></p>    
+      <div class="health"><?= $scoresTags[0] ?></div>
+      <p><?= $scores[$scoresTags[1]] ?></p>    
+      <div class="health"><?= $scoresTags[1] ?></div>
     </div>
   </div>
 </div>
@@ -35,13 +70,13 @@
     <img src="public/img/star.svg" alt="">
   </div>
   <div class="content_movie">
-    <img src="public/img/camping.jpg" alt="">
+    <img src="<?= $data->movie_image ?>" alt="">
     <div class="title_movie">
       <div class="title_movie_header">
-        <h3>Camping</h3>
-        <p>2013</p>
+        <h3><?= $data->movie_name ?></h3>
+        <p><?= $data->movie_year ?></p>
       </div>
-      <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, cum amet? Alias dolorum fuga aspernatur odio saepe.</p>
+      <p class="description"><?= $data->movie_desc ?></p>
       <a href="">Watch Movie</a>
     </div>
   </div>
@@ -54,23 +89,21 @@
     <img src="public/img/star.svg" alt="">
   </div>
   <div class="content_cocktail">
-    <img src="public/img/mojito.jpg" alt="">
+    <img src="<?= $data->cocktail_image ?>" alt="">
     <div class="title_cocktail">
       <div class="title_cocktail_header">
-        <h3>Mojito</h3>
+        <h3><?= $data->cocktail_name ?></h3>
       </div>
       <ul class="ingredients_cocktail">
-        <li>Rhum</li>
-        <li>Mint</li>
-        <li>Lime</li>
-        <li>Sugar</li>
-        <li>Eau qui pique</li>
+        <?php foreach (json_decode($data->cocktail_ingredients) as $ingredient): ?>
+          <li><?= $ingredient ?></li>
+        <?php endforeach; ?>
       </ul>
       <p class="see_recipe">+</p>
     </div>
   </div>
   <div class="hidden_recipe">
-       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est harum officia inventore voluptate iusto dolore nostrum facilis molestias officiis dolores, placeat perferendis sequi, aut numquam cumque, iste incidunt tempora vitae.</p>
+       <p><?= $data->cocktail_recipe ?></p>
   </div>
 </div>
 
@@ -81,132 +114,173 @@
     <img src="public/img/star.svg" alt="">
   </div>
   <div class="content_recipe">
-    <img src="public/img/vrai_couscous.jpg" alt="">
+    <img src="<?= $data->recipe_image ?>" alt="<?= $data->recipe_name ?>">
     <div class="title_recipe">
       <div class="title_recipe_header">
-        <h3>Couscous</h3>
-        <p>750kcal</p>
+        <h3><?= $data->recipe_name ?></h3>
+        <p><?= $data->recipe_calories ?>kcal</p>
       </div>
-      <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, cum amet? Alias dolorum fuga aspernatur odio saepe.</p>
-      <a href="">See recipe</a>
+      <p class="description">
+      <?php foreach (json_decode($data->recipe_ingredients) as $ingredient): ?>
+        <li><?= $ingredient ?></li>
+      <?php endforeach; ?>
+      </p>
+      <a href="<?= $data->recipe_link ?>">See recipe</a>
     </div>
   </div>
 </div>
 
 <!-- calendar  -->
 <h1>Calendar</h1>
-<div class="vignette">
+
+<?php
+$i = 0;
+foreach ($oldData as $dayData):  
+?>
+
+<div class="vignette<?= $i > 0 ? ' vignette_'.$i : ''; ?>">
   <div class="show">
     <div class="title">
-      <div class="date">20</div>
-      <div class="month">janv.</div>
+      <div class="date"><?= date('j', (time() - 86400*$i)); ?></div>
+      <div class="month"><?= date('M', (time() - 86400*$i)); ?></div>
     </div>
     <div class="button">+</div>
   </div>
   <div class="infos">
     <div class="info-row info-row-1">
         <p class="movie">Movie</p>
-        <p class="movie_name">Camping</p>
+        <p class="movie_name"><?= $dayData->movie_name ?? 'no data yet' ?></p>
     </div>
     <div class="info-row info-row-2">
         <p class="cocktail">Cocktail</p>
-        <p class="cocktail_name">Mojito</p>
+        <p class="cocktail_name"><?= $dayData->cocktail_name ?? 'no data yet' ?></p>
     </div>
     <div class="info-row info-row-3">
         <p class="recipe">Recipe</p>
-        <p class="recipe_name">Couscous</p>
+        <p class="recipe_name"><?= $dayData->recipe_name ?? 'no data yet' ?></p>
+    </div>
+  </div>
+</div>
+
+<?php
+$i++;
+endforeach;
+?>
+
+<!--
+<div class="vignette">
+  <div class="show">
+    <div class="title">
+      <div class="date"><?= date('j', (time() - 86400*1)) ?></div>
+      <div class="month"><?= date('M', (time() - 86400*1)) ?></div>
+    </div>
+    <div class="button">+</div>
+  </div>
+  <div class="infos">
+    <div class="info-row info-row-1">
+        <p class="movie">Movie</p>
+        <p class="movie_name"><?= $oldData[1]->movie_name ?></p>
+    </div>
+    <div class="info-row info-row-2">
+        <p class="cocktail">Cocktail</p>
+        <p class="cocktail_name"><?= $oldData[1]->cocktail_name ?></p>
+    </div>
+    <div class="info-row info-row-3">
+        <p class="recipe">Recipe</p>
+        <p class="recipe_name"><?= $oldData[1]->recipe_name ?></p>
     </div>
   </div>
 </div>
 <div class="vignette vignette_1">
   <div class="show">
     <div class="title">
-      <div class="date">19</div>
-      <div class="month">janv.</div>
+      <div class="date"><?= date('j', (time() - 86400*2)) ?></div>
+      <div class="month"><?= date('M', (time() - 86400*2)) ?></div>
     </div>
     <div class="button">+</div>
   </div>
   <div class="infos">
     <div class="info-row info-row-1">
         <p class="movie">Movie</p>
-        <p class="movie_name">Camping</p>
+        <p class="movie_name"><?= $oldData[2]->movie_name ?></p>
     </div>
     <div class="info-row info-row-2">
         <p class="cocktail">Cocktail</p>
-        <p class="cocktail_name">Mojito</p>
+        <p class="cocktail_name"><?= $oldData[2]->cocktail_name ?></p>
     </div>
     <div class="info-row info-row-3">
         <p class="recipe">Recipe</p>
-        <p class="recipe_name">Camping</p>
+        <p class="recipe_name"><?= $oldData[2]->recipe_name ?></p>
     </div>
   </div>
 </div>  
 <div class="vignette vignette_2">
   <div class="show">
     <div class="title">
-      <div class="date">18</div>
-      <div class="month">janv.</div>
+      <div class="date"><?= date('j', (time() - 86400*3)) ?></div>
+      <div class="month"><?= date('M', (time() - 86400*3)) ?></div>
     </div>
     <div class="button">+</div>
   </div>
   <div class="infos">
     <div class="info-row info-row-1">
         <p class="movie">Movie</p>
-        <p class="movie_name">Camping</p>
+        <p class="movie_name"><?= $oldData[3]->movie_name ?></p>
     </div>
     <div class="info-row info-row-2">
         <p class="cocktail">Cocktail</p>
-        <p class="cocktail_name">Mojito</p>
+        <p class="cocktail_name"><?= $oldData[3]->cocktail_name ?></p>
     </div>
     <div class="info-row info-row-3">
         <p class="recipe">Recipe</p>
-        <p class="recipe_name">Camping</p>
+        <p class="recipe_name"><?= $oldData[3]->recipe_name ?></p>
     </div>
   </div>
 </div>  
 <div class="vignette vignette_3">
   <div class="show">
     <div class="title">
-      <div class="date">17</div>
-      <div class="month">janv.</div>
+      <div class="date"><?= date('j', (time() - 86400*4)) ?></div>
+      <div class="month"><?= date('M', (time() - 86400*4)) ?></div>
     </div>
     <div class="button">+</div>
   </div>
   <div class="infos">
     <div class="info-row info-row-1">
         <p class="movie">Movie</p>
-        <p class="movie_name">Camping</p>
+        <p class="movie_name"><?= $oldData[4]->movie_name ?></p>
     </div>
     <div class="info-row info-row-2">
         <p class="cocktail">Cocktail</p>
-        <p class="cocktail_name">Mojito</p>
+        <p class="cocktail_name"><?= $oldData[4]->cocktail_name ?></p>
     </div>
     <div class="info-row info-row-3">
         <p class="recipe">Recipe</p>
-        <p class="recipe_name">Camping</p>
+        <p class="recipe_name"><?= $oldData[4]->recipe_name ?></p>
     </div>
   </div>
 </div>  
 <div class="vignette">
   <div class="show">
     <div class="title">
-      <div class="date">16</div>
-      <div class="month">janv.</div>
+      <div class="date"><?= date('j', (time() - 86400*5)) ?></div>
+      <div class="month"><?= date('M', (time() - 86400*5)) ?></div>
     </div>
     <div class="button">+</div>
   </div>
   <div class="infos">
     <div class="info-row info-row-1">
         <p class="movie">Movie</p>
-        <p class="movie_name">Camping</p>
+        <p class="movie_name"><?= $oldData[5]->movie_name ?></p>
     </div>
     <div class="info-row info-row-2">
         <p class="cocktail">Cocktail</p>
-        <p class="cocktail_name">Mojito</p>
+        <p class="cocktail_name"><?= $oldData[5]->cocktail_name ?></p>
     </div>
     <div class="info-row info-row-3">
         <p class="recipe">Recipe</p>
-        <p class="recipe_name">Camping</p>
+        <p class="recipe_name"><?= $oldData[5]->recipe_name ?></p>
     </div>
   </div>
 </div>
+ -->
