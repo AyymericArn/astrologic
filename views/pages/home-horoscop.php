@@ -3,7 +3,7 @@
 require('../model/DataManager.php');
 
 if (!isset($_COOKIE['zodiac'])) {
-    setcookie('zodiac', $_SESSION['zodiac'], time() + 365*24*3600, null, null, false, true);
+    setcookie('zodiac', $_SESSION['zodiac'], time() + 365*24*3600);
 } else {
     $_SESSION['zodiac'] = $_COOKIE['zodiac'];
 }
@@ -25,7 +25,7 @@ $scoresTags = array_keys($scores);
 // fetch previous days datas
 
 $oldData = [];
-for ($i=1; $i < 6; $i++) { 
+for ($i=1; $i < 11; $i++) { 
   $oldData[$i] = $getter->getOldData($_SESSION['zodiac'], $i);
 }
 
@@ -138,7 +138,7 @@ $i = 0;
 foreach ($oldData as $dayData):  
 ?>
 
-<div class="vignette<?= $i > 0 ? ' vignette_'.$i : ''; ?>">
+<div class="vignette<?= $i > 0 ? ' vignette_'.$i % 4 : ''; ?>">
   <div class="show">
     <div class="title">
       <div class="date"><?= date('j', (time() - 86400*$i)); ?></div>

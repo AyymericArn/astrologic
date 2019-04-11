@@ -75,6 +75,13 @@ $router->get('/unsubscribe/:hash', function ($hash) {
     require('../views/pages/unsubscribe.php');
 });
 
+// infinite scroll
+$router->get('/feed/:zodiac/:daysbefore', function ($zodiac, $daysbefore) {
+    global $db;
+    require('../controller/feedProvider.php');
+    exit;
+});
+
 $router->get('/home_horoscop', function () {
     if ($_SESSION['connected']) {
         require('../views/pages/home-horoscop.php');        
