@@ -5,6 +5,7 @@
         }
     },
     "require": {
-        "altorouter/altorouter": "^1.2"
+        "altorouter/altorouter": "^1.2",
+        "mailjet/mailjet-apiv3-php": "^1.4"
     }
 }

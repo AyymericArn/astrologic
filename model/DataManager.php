@@ -15,4 +15,9 @@ class DataManager {
         $data = $req->fetch();
         return $data;
     }
+    public function getOldData($zodiac, $daysBefore) {
+        $req = $this->db->query('SELECT * FROM '.$zodiac." ORDER BY date DESC LIMIT $daysBefore, 1");
+        $data = $req->fetch();
+        return $data;
+    }
 }
