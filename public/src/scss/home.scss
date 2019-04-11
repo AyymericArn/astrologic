@@ -1,27 +1,30 @@
 body {
-    .header_home {
-        display: flex;
-        margin-top: 30px;
-        .menu_home {
-            margin-top: 10px;
-            width: 20px; 
-            height: 20px;
-        }
-        .logo_home {
-            width: 50px;
-            height: 50px;
-            margin-left: 40%;
-        }
-    }
+  // header home page
+    
     margin-left: auto;
     margin-right: auto;
     color: $darkblue;
     width: 300px;
+    .header_home {
+        display: flex;
+        margin-top: 30px;
+    .menu_home {
+          margin-top: 10px;
+          width: 20px; 
+          height: 20px;
+    }
+      .logo_home {
+          width: 50px;
+          height: 50px;
+            margin-left: 40%;
+        }
+    }
     h1 {
         font-family: $title-font;
         font-size: 24px;
         margin: 30px 0 20px 0;
     }
+    // horoscope
     .horoscope {
         display: flex;
         justify-content: space-between;
@@ -32,6 +35,9 @@ body {
         padding: 6px 16px;
         background-color: $purple;
         border-radius: 4px;
+        .horoscope-display {
+          height: 100%;
+        }
       }
       
       .header_horoscope {
@@ -78,39 +84,135 @@ body {
         font-size: 12px;
         color: $primary-white;
       }
-    // .horoscope {
-    //     width: 100%;
-    //     background: $purple;
-    //     font-family: $title-font;
-    //     color: $primary-white;
-    //     height: 100%;
-    //     border-radius: 5px;
-    //     .header_horoscope {
-    //         display: flex;
-    //         justify-content: space-between;
-    //         margin:10px;
-    //         .header_horoscope_title {
-    //             display: flex;
-    //             img {
-    //                 width: 30px;
-    //                 height: 30px;
-    //             }
-    //         }
-    //         .plus_home {
-    //             width: 20px;
-    //             height: 20px;
-    //             margin:0;
-    //         }
-    //     }
-    //     .horoscope_text {
-    //         margin: 10px;
-    //         p{
-    //             font-size: 12px;
-    //             font-family: $content-font;
-    //         }
-    //     }
-        
-    // }
+      .horoscope_more{
+        display: none;
+      }
+      .horoscope_rating {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        position: relative;
+        border: 2px solid $primary-white;
+        border-radius: 50%;
+        p {
+          margin: 0;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        }
+        .health {
+          position: absolute; 
+        }
+      }
+    // movie
+    .your_movie {
+      background: $bluegreen;
+    }
+    .your_cocktail {
+      background: $pink;
+      .cocktail-display {
+        height: 100%;
+      }
+    }
+    .your_recipe {
+      background: $yellow;
+    }
+    div[class*="your"] {
+        display: none;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        width: calc(100%-32px);
+        height: 100%;
+        padding: 6px 16px;
+        border-radius: 4px;
+        margin: 16px 0;
+        div[class*="header_"] {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          margin: 10px 0 15px 0;
+          h1 {
+            font-size: 18px;
+            color: $primary-white;
+            margin:0;
+            font-weight: 300;
+          }
+          img {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+          }
+        }
+        div[class*="content"] {
+          display: flex;
+          width: 100%;
+          margin-bottom: 10px;
+          img {
+            width: 35%;
+            height: 120px;
+
+          }
+        }
+        div[class*="title"] {
+          width: 65%;
+          .description {
+            font-size: 10px;
+            font-family: $content-font;
+            color: $primary-white;
+            margin: 10px;
+            line-height:15px;
+          }
+          .ingredients_cocktail {
+            margin: 10px 20px 0 20px;
+            font-size: 10px;
+            font-family: $content-font;
+            color: $primary-white;
+            line-height:15px;
+            padding: 0;
+          }
+          a, .see_recipe {
+            display: flex;
+            justify-content: flex-end;
+            color: $primary-white;
+            font-size: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: $content-font;
+          }
+          .see_recipe {
+            font-size: 22px;
+            margin: 0;
+          }
+        }
+        .hidden_recipe {
+          display: none;
+          p {
+            font-size: 10px;
+            font-family: $content-font;
+            color: $primary-white;
+            line-height:15px;
+          }
+        }
+        .title_movie_header, .title_cocktail_header, .title_recipe_header {
+          font-family: $title-font;
+          color: $primary-white;
+          font-size: 14px;
+          display: flex;
+          flex-direction: row;
+            h3, p {
+              margin: 0 10px;
+              font-weight: 300;
+              font-size: 14px;
+            }
+            p {
+              opacity: 0.5;
+            }
+          }
+          
+    }
+    // calendar
     .vignette {
         display: flex;
         justify-content: space-between;
@@ -122,9 +224,7 @@ body {
         background-color: $pink;
         border-radius: 4px;
         margin: 16px 0 16px 0;
-        .vignette-display {
-          height: 100%;
-        }
+        
       }
       .vignette_1 {
           background: $bluegreen;
@@ -136,7 +236,9 @@ body {
         background: $purple;
     }
       
-      
+      .vignette-display {
+          height: 100%;
+        }
       .show {
         display: flex;
         justify-content: space-between;

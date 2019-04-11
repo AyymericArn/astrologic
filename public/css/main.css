@@ -119,6 +119,8 @@ body {
     padding: 6px 16px;
     background-color: #889AFE;
     border-radius: 4px; }
+    body .horoscope .horoscope-display {
+      height: 100%; }
   body .header_horoscope {
     display: flex;
     justify-content: space-between;
@@ -153,6 +155,107 @@ body {
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     color: #f5f5f5; }
+  body .horoscope_more {
+    display: none; }
+  body .horoscope_rating {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    position: relative;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%; }
+    body .horoscope_rating p {
+      margin: 0;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center; }
+    body .horoscope_rating .health {
+      position: absolute; }
+  body .your_movie {
+    background: #67D5DC; }
+  body .your_cocktail {
+    background: #F080A6; }
+    body .your_cocktail .cocktail-display {
+      height: 100%; }
+  body .your_recipe {
+    background: #FECF58; }
+  body div[class*="your"] {
+    display: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    width: calc(100%-32px);
+    height: 100%;
+    padding: 6px 16px;
+    border-radius: 4px;
+    margin: 16px 0; }
+    body div[class*="your"] div[class*="header_"] {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0 15px 0; }
+      body div[class*="your"] div[class*="header_"] h1 {
+        font-size: 18px;
+        color: #f5f5f5;
+        margin: 0;
+        font-weight: 300; }
+      body div[class*="your"] div[class*="header_"] img {
+        width: 16px;
+        height: 16px;
+        margin: 0; }
+    body div[class*="your"] div[class*="content"] {
+      display: flex;
+      width: 100%;
+      margin-bottom: 10px; }
+      body div[class*="your"] div[class*="content"] img {
+        width: 35%;
+        height: 120px; }
+    body div[class*="your"] div[class*="title"] {
+      width: 65%; }
+      body div[class*="your"] div[class*="title"] .description {
+        font-size: 10px;
+        font-family: "Montserrat", sans-serif;
+        color: #f5f5f5;
+        margin: 10px;
+        line-height: 15px; }
+      body div[class*="your"] div[class*="title"] .ingredients_cocktail {
+        margin: 10px 20px 0 20px;
+        font-size: 10px;
+        font-family: "Montserrat", sans-serif;
+        color: #f5f5f5;
+        line-height: 15px;
+        padding: 0; }
+      body div[class*="your"] div[class*="title"] a, body div[class*="your"] div[class*="title"] .see_recipe {
+        display: flex;
+        justify-content: flex-end;
+        color: #f5f5f5;
+        font-size: 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: "Montserrat", sans-serif; }
+      body div[class*="your"] div[class*="title"] .see_recipe {
+        font-size: 22px;
+        margin: 0; }
+    body div[class*="your"] .hidden_recipe {
+      display: none; }
+      body div[class*="your"] .hidden_recipe p {
+        font-size: 10px;
+        font-family: "Montserrat", sans-serif;
+        color: #f5f5f5;
+        line-height: 15px; }
+    body div[class*="your"] .title_movie_header, body div[class*="your"] .title_cocktail_header, body div[class*="your"] .title_recipe_header {
+      font-family: "Capriola", sans-serif;
+      color: #f5f5f5;
+      font-size: 14px;
+      display: flex;
+      flex-direction: row; }
+      body div[class*="your"] .title_movie_header h3, body div[class*="your"] .title_movie_header p, body div[class*="your"] .title_cocktail_header h3, body div[class*="your"] .title_cocktail_header p, body div[class*="your"] .title_recipe_header h3, body div[class*="your"] .title_recipe_header p {
+        margin: 0 10px;
+        font-weight: 300;
+        font-size: 14px; }
+      body div[class*="your"] .title_movie_header p, body div[class*="your"] .title_cocktail_header p, body div[class*="your"] .title_recipe_header p {
+        opacity: 0.5; }
   body .vignette {
     display: flex;
     justify-content: space-between;
