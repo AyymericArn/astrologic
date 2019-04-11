@@ -60,15 +60,6 @@ $router->get('/calendar', function () {
 //     }
 // });
 
-// $router->get('/account', function () {
-//     if ($_SESSION['connected']) {
-//         require('../views/pages/account.php');        
-//     } else {
-//         header('Location: ./account');  
-//         exit;      
-//     }
-// });
-
 // change when it's good
 $router->get('/unsubscribe/:hash', function ($hash) {
     global $db;

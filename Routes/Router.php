@@ -35,9 +35,6 @@ class Router {
         return $route->call();
       }
     }
-    echo '<pre>';
-    var_dump($this->url);
-    echo '</pre>';
-    throw new \Exception('No matching route');
+    require('../views/pages/404.php');
   }
 }
