@@ -83,7 +83,7 @@ init(0);
 
 // infinite scroll
 
-const url = 'https://francoisxaviermanceau.fr/hetic_projects/astrologic//feed';
+const url = 'https://francoisxaviermanceau.fr/hetic_projects/astrologic/feed';
 let daysBefore = 10;
 const index = document.cookie.lastIndexOf(';');
 const zodiac = document.cookie.substring(7, index);

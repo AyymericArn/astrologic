@@ -22,6 +22,10 @@ body div[class*="your"].visible {
   height: auto;
 }
 
+body .infos {
+  display: none !important;
+} 
+
 body .up-pos {
   transform: translateY(-110px);
 }
@@ -321,7 +325,7 @@ body {
       }
       
       .infos {
-        display: flex;
+        display: none;
         flex-direction: column;
         width: 100%;
         height: auto;
