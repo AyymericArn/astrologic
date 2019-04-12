@@ -1,1 +1,0 @@
-<div>horoscope</div>

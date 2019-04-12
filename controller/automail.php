@@ -3,6 +3,8 @@
 require '../model/db.php';
 require '../model/DataManager.php';
 require '../vendor/autoload.php';
+require 'utils/TextShortener.php';
+
 use \Mailjet\Resources;
 
 class Mailer extends DataManager {
@@ -46,7 +48,6 @@ class Mailer extends DataManager {
         foreach ($zodiacList as $zodiacSign) {
             $data = $this->getData($zodiacSign);
 
-            require('./utils/TextShortener.php');
             require('../views/layout/mail_layout.php');
 
             $this->mailTemplates[$zodiacSign] = $mailContent;
@@ -73,7 +74,7 @@ class Mailer extends DataManager {
                             'Name' => "passenger 1"
                         ]
                     ],
-                    'Subject' => "Your email flight plan!",
+                    'Subject' => "Your daily astrologic recommenfations !",
                     'TextPart' => "Dear passenger 1, welcome to Mailjet! May the delivery force be with you!",
                     'HTMLPart' => $mailContent
                 ]

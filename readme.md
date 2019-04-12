@@ -5,7 +5,7 @@ Cocktail / Meal recipes and advises movie to watch everyday based on your daily 
 
 ## Installation
 
-Clone the repo, install composer if you don't have it installed, run ```composer install``` and there you go !
+Clone the repo, install composer if you don't have it installed, run ```composer install``` ; you shall also compile scss source files with a tool like gulp or koala.
 
 ## Built with
 

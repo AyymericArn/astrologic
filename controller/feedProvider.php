@@ -14,7 +14,7 @@ $i = $daysbefore;
 foreach ($oldData as $dayData):  
 ?>
 
-<div class="vignette<?= $i > 0 ? ' vignette_'.$i % 4 : ''; ?>">
+<div class="vignette<?= $i > 0 ? ' vignette_'.$i % 4 : ''; ?> up-pos">
   <div class="show">
     <div class="title">
       <div class="date"><?= date('j', (time() - 86400*$i)); ?></div>

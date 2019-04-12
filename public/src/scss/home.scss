@@ -29,6 +29,20 @@ body .up-pos {
   transition: all 0.2s ease;
 }
 
+body div[class*="your"]  div[class*="content"].content_recipe {
+  display: inherit;
+
+  img {
+    float: left;
+  }
+
+  ul {
+    padding: 20px 0;
+    margin: 16px 20px 0 15px;
+    clear: both;
+  }
+}
+
 body {
   // header home page
 
