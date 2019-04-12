@@ -43,9 +43,9 @@ $button_horoscope.addEventListener('click', () => {
 
   if(!$horoscope.classList.contains('horoscope-display')){
 
+    $more_horoscope.style.display = "none"
     setTimeout(() => {
       $button_horoscope.innerHTML = "+"
-      // $more_horoscope.style.position = "absolute"
       // $cocktail_recipe.style.position = "absolute"
       // $meal_recipe.style.position = "absolute"
       // $movie.style.position = "absolute"
@@ -54,7 +54,7 @@ $button_horoscope.addEventListener('click', () => {
   } else {
 
     $button_horoscope.innerHTML = "-"
-    // $more_horoscope.style.display = "block"
+    $more_horoscope.style.display = "block"
     // $cocktail_recipe.style.position = "relative"
     // $meal_recipe.style.position = "relative"
     // $movie.style.position = "relative"      

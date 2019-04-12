@@ -21,11 +21,6 @@ body div[class*="your"].visible {
   transform: scaleY(1);
   height: auto;
 }
-
-body .infos {
-  display: none !important;
-} 
-
 body .up-pos {
   transform: translateY(-110px);
 }
