@@ -46,6 +46,7 @@ class Mailer extends DataManager {
         foreach ($zodiacList as $zodiacSign) {
             $data = $this->getData($zodiacSign);
 
+            require('./utils/TextShortener.php');
             require('../views/layout/mail_layout.php');
 
             $this->mailTemplates[$zodiacSign] = $mailContent;

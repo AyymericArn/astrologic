@@ -2,6 +2,10 @@
 
 // compute scores
 
+$shortener = new TextShortener();
+
+$shortenedDesc = $shortener->shorten($data->horoscop_desc);
+
 $scores = json_decode($data->horoscop_scores, true);
 arsort($scores);
 
@@ -210,7 +214,7 @@ $mailContent = (
         .card-knowmore
         {
             margin-left: 240px;
-            font-size: 9px;
+            font-size: 12px;
             font-family: 'MontSerrat', sans-serif;
         }
 
@@ -275,10 +279,10 @@ $mailContent = (
 
     <div class=\"card-type-text-horoscope\">
             <p class=\"card-title\">Horoscope</p>
-            <p class=\"card-description\">$data->horoscop_desc</p>
+            <p class=\"card-description\">$shortenedDesc</p>
             <div class=\"card-knowmore\">
                 <img class=\"arrow-right\" src=\"./img/arrow-right.png\" alt=\"\">
-                <p>Know more</p>
+                <p>Know more →</p>
             </div>
         </div>
     
@@ -292,7 +296,7 @@ $mailContent = (
             <div class=\"clearBoth\"></div>
             <div class=\"card-knowmore recipe\">
                 <img class=\"arrow-right\" src=\"./img/arrow-right.png\" alt=\"\">
-                <p>Know more</p>
+                <p>Know more →</p>
             </div>
         </div>
     
@@ -306,7 +310,7 @@ $mailContent = (
                 </ul>
                 <div>
                     <img class=\"arrow-right-1\" src=\"./img/arrow-right.png\" alt=\"\">
-                    <p class=\"knowmore-1\">Know more</p>
+                    <p class=\"knowmore-1\">Know more →</p>
                 </div>
             </div>
     
@@ -315,7 +319,7 @@ $mailContent = (
                 <p class=\"card-description\">$data->movie_desc</p>
                 <div class=\"card-knowmore\">
                     <img class=\"arrow-right\" src=\"./img/arrow-right.png\" alt=\"\">
-                    <p>Know more</p>
+                    <p>Know more →</p>
                 </div>
             </div>
     

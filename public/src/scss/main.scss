@@ -12,12 +12,13 @@ $bluegreen: #67D5DC;
 //@import 'home';
 @import "account";
 @import "home";
+@import "circles";
 
 body{
     margin-left: auto;
     margin-right: auto;
     color: $darkblue;
-    width: 300px;
+    width: 340px;
     .title_astro {
         img {
             display: flex;
@@ -371,3 +372,8 @@ form .next img {
     left: 0;
   }
   
+@media screen and (max-width: 480px) {
+    body {
+        width: 300px;
+    }
+}

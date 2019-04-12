@@ -1,10 +1,43 @@
+.score_wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 251px;
+}
+
+.recipe_ingredients {
+  margin: 10px 20px 0 20px;
+  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
+  color: #f5f5f5;
+  line-height: 15px;
+  padding: 0 8px;
+}
+
+.horoscope, div[class^="your"] {
+  transition: all 0.2s ease;
+}
+
+body div[class*="your"].visible {
+  transform: scaleY(1);
+  height: auto;
+}
+
+body .up-pos {
+  transform: translateY(-110px);
+}
+
+.calendar_title, .vignette {
+  transition: all 0.2s ease;
+}
+
 body {
   // header home page
+
     
     margin-left: auto;
     margin-right: auto;
     color: $darkblue;
-    width: 300px;
+    width: 340px;
     .header_home {
         display: flex;
         margin-top: 30px;
@@ -32,9 +65,10 @@ body {
         flex-direction: column;
         width: calc(100%-32px);
         height: 100%;
-        padding: 6px 16px;
+        padding: 14px 24px;
         background-color: $purple;
         border-radius: 4px;
+        line-height: 1.5;
         .horoscope-display {
           height: 100%;
         }
@@ -74,7 +108,7 @@ body {
       .button_horoscope {
         display: flex;
         flex-direction: row;
-        font-size: 18px;
+        font-size: 24px;
         font-family: $title-font;
         color: #fff;
       }
@@ -87,6 +121,14 @@ body {
       .horoscope_more{
         display: none;
       }
+      .score_tag {
+        position: relative;
+        clear: both;
+        width: 60px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
       .horoscope_rating {
         width: 60px;
         height: 60px;
@@ -119,13 +161,15 @@ body {
       background: $yellow;
     }
     div[class*="your"] {
-        display: none;
+        transform: scaleY(0);
+        overflow: hidden;
+        transform-origin: top;
         justify-content: space-between;
         align-items: flex-start;
         flex-direction: column;
         width: calc(100%-32px);
-        height: 100%;
-        padding: 6px 16px;
+        height: 0px;
+        padding: 14px 24px;
         border-radius: 4px;
         margin: 16px 0;
         div[class*="header_"] {
@@ -146,6 +190,7 @@ body {
           }
         }
         div[class*="content"] {
+          position: relative;
           display: flex;
           width: 100%;
           margin-bottom: 10px;
@@ -156,7 +201,6 @@ body {
           }
         }
         div[class*="title"] {
-          width: 65%;
           .description {
             font-size: 10px;
             font-family: $content-font;
@@ -170,7 +214,7 @@ body {
             font-family: $content-font;
             color: $primary-white;
             line-height:15px;
-            padding: 0;
+            padding: 0 8px;
           }
           a, .see_recipe {
             display: flex;
@@ -180,6 +224,9 @@ body {
             text-decoration: none;
             text-transform: uppercase;
             font-family: $content-font;
+            position: absolute;
+            bottom: 0;
+            right: 0;
           }
           .see_recipe {
             font-size: 22px;
@@ -207,7 +254,7 @@ body {
               font-size: 14px;
             }
             p {
-              opacity: 0.5;
+              opacity: 0.7;
             }
           }
           
@@ -274,7 +321,7 @@ body {
       }
       
       .infos {
-        display: none;
+        display: flex;
         flex-direction: column;
         width: 100%;
         height: auto;

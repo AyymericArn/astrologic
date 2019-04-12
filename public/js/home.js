@@ -7,7 +7,6 @@ const init = (range) => {
   // calendar
   for(let i = range; i<$vignette.length; i++){
     $button[i].addEventListener('click', (_e) => {
-      console.log('chuuch');
       $vignette[i].classList.toggle('vignette-display')
       if(!$vignette[i].classList.contains('vignette-display')){
         $button[i].innerHTML = "+"
@@ -26,21 +25,40 @@ const $more_horoscope = document.querySelector('.horoscope_more')
 const $cocktail_recipe = document.querySelector('.your_cocktail')
 const $meal_recipe = document.querySelector('.your_recipe')
 const $movie = document.querySelector('.your_movie')
+
+const $calendarTitle = document.querySelector('.calendar_title')
+const $calendarCards = document.querySelectorAll('.vignette')
+
 // horoscope
 $button_horoscope.addEventListener('click', () => {
   $horoscope.classList.toggle('horoscope-display')
+  $cocktail_recipe.classList.toggle('visible')
+  $meal_recipe.classList.toggle('visible')
+  $movie.classList.toggle('visible')
+
+  $calendarTitle.classList.toggle('up-pos')
+  $calendarCards.forEach(card => {
+    card.classList.toggle('up-pos')
+  })
+
   if(!$horoscope.classList.contains('horoscope-display')){
-    $button_horoscope.innerHTML = "+"
-    $more_horoscope.style.display = "none"
-    $cocktail_recipe.style.display = "none"
-    $meal_recipe.style.display = "none"
-    $movie.style.display = "none"
+
+    setTimeout(() => {
+      $button_horoscope.innerHTML = "+"
+      // $more_horoscope.style.position = "absolute"
+      // $cocktail_recipe.style.position = "absolute"
+      // $meal_recipe.style.position = "absolute"
+      // $movie.style.position = "absolute"
+    }, 200);
+    
   } else {
+
     $button_horoscope.innerHTML = "-"
-    $more_horoscope.style.display = "block"
-    $cocktail_recipe.style.display = "flex"
-    $meal_recipe.style.display = "flex"
-    $movie.style.display = "flex"
+    // $more_horoscope.style.display = "block"
+    // $cocktail_recipe.style.position = "relative"
+    // $meal_recipe.style.position = "relative"
+    // $movie.style.position = "relative"      
+
   }
 })
 

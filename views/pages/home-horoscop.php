@@ -1,6 +1,7 @@
 <?php
 
 require('../model/DataManager.php');
+require('../controller/utils/TextShortener.php');
 
 if (!isset($_COOKIE['zodiac'])) {
     setcookie('zodiac', $_SESSION['zodiac'], time() + 365*24*3600);
@@ -11,6 +12,8 @@ if (!isset($_COOKIE['zodiac'])) {
 $getter = new DataManager($db);
 
 $data = $getter->getData($_SESSION['zodiac']);
+
+$shortener = new TextShortener();
 
 // horoscop scores
 
@@ -49,18 +52,36 @@ for ($i=1; $i < 11; $i++) {
     <div class="button_horoscope">+</div>
   </div>
   <div class="text_horoscope">
-    <p><?= $data->horoscop_desc ?></p>
+    <p><?= $shortener->shorten($data->horoscop_desc) ?></p>
   </div>
 
   <!-- add infos onclick -->
   <div class="text_horoscope horoscope_more">
-    <p>Luck and prosperity lie within your grasp now, Aquarius. The only problem is that you might not notice because you're so caught up in some emotional drama that occupies...</p>
-    <div class="horoscope_rating">
-      <p><?= $scores[$scoresTags[0]] ?></p>    
-      <div class="health"><?= $scoresTags[0] ?></div>
-      <p><?= $scores[$scoresTags[1]] ?></p>    
-      <div class="health"><?= $scoresTags[1] ?></div>
+    <!-- <p><?= $data->horoscop_desc ?></p> -->
+    <!-- circle -->
+    <div class="score_wrapper">
+      <div>
+        <div class="c100 p<?= $scores[$scoresTags[0]] ?> small green">
+            <span><?= $scores[$scoresTags[0]] ?>%</span>
+            <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+            </div>
+        </div>
+        <div class="score_tag"><?= $scoresTags[0] ?></div>
+      </div>
+      <div>
+        <div class="c100 p<?= $scores[$scoresTags[1]] ?> small green">
+            <span><?= $scores[$scoresTags[1]] ?>%</span>
+            <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+            </div>
+        </div>
+        <div class="score_tag"><?= $scoresTags[1] ?></div>
+      </div>
     </div>
+
   </div>
 </div>
 
@@ -78,7 +99,6 @@ for ($i=1; $i < 11; $i++) {
         <p><?= $data->movie_year ?></p>
       </div>
       <p class="description"><?= $data->movie_desc ?></p>
-      <a href="">Watch Movie</a>
     </div>
   </div>
 </div>
@@ -122,9 +142,11 @@ for ($i=1; $i < 11; $i++) {
         <p><?= $data->recipe_calories ?>kcal</p>
       </div>
       <p class="description">
-      <?php foreach (json_decode($data->recipe_ingredients) as $ingredient): ?>
-        <li><?= $ingredient ?></li>
-      <?php endforeach; ?>
+        <ul class="recipe_ingredients">
+          <?php foreach (json_decode($data->recipe_ingredients) as $ingredient): ?>
+            <li><?= $ingredient ?></li>
+          <?php endforeach; ?>
+        </ul>
       </p>
       <a href="<?= $data->recipe_link ?>">See recipe</a>
     </div>
@@ -132,14 +154,14 @@ for ($i=1; $i < 11; $i++) {
 </div>
 
 <!-- calendar  -->
-<h1>Calendar</h1>
+<h1 class="calendar_title up-pos">Calendar</h1>
 
 <?php
 $i = 0;
 foreach ($oldData as $dayData):  
 ?>
 
-<div class="vignette<?= $i > 0 ? ' vignette_'.$i % 4 : ''; ?>">
+<div class="vignette<?= $i > 0 ? ' vignette_'.$i % 4 : ''; ?> up-pos">
   <div class="show">
     <div class="title">
       <div class="date"><?= date('j', (time() - 86400*$i)); ?></div>
