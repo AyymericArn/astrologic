@@ -1,7 +1,7 @@
 ## Description
 
 Astrologic is a lifestyle advisor using astrology . It provides you
-Cocktail / Meal recipes and advises movie to watch everyday based on your daily horoscop.
+Cocktail / Meal recipes and advises movie to watch everyday based on your daily horoscop. The project is accessible at [astrologiic.space](http://astrologiic.space)
 
 ## Installation
 
@@ -16,12 +16,12 @@ Clone the repo, install composer if you don't have it installed, run ```composer
 ## Technologies
 
 * [Edamam API](https://developer.edamam.com/)
-* [The Movie Database] (https://www.themoviedb.org/?language=fr)
-* [Astrology API] (https://astrologyapi.com/)
-* [TheCocktail DB] (https://www.thecocktaildb.com/api.php)
-* [IBM Watson API] (https://www.ibm.com/watson/developer/)
-* [Vedic Astral API] (https://vedicastroapi.com/)
-* [MailJet] (https://fr.mailjet.com/email-api/)
+* [The Movie Database](https://www.themoviedb.org/?language=fr)
+* [Astrology API](https://astrologyapi.com/)
+* [TheCocktail DB](https://www.thecocktaildb.com/api.php)
+* [IBM Watson API](https://www.ibm.com/watson/developer/)
+* [Vedic Astral API](https://vedicastroapi.com/)
+* [MailJet](https://fr.mailjet.com/email-api/)
 
 
 
